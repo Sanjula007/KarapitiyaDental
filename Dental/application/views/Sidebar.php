@@ -8,16 +8,16 @@
 
                             <ul class="nav nav-pills nav-stacked">
                                 <li class="active">
-                                    <a href="customer-orders.html"><i class="fa fa-list"></i>Patient</a>
+                                    <a href="<?php echo base_url('Patient/patients'); ?>"><i class="fa fa-list"></i>Patient</a>
                                 </li>
                                 <li>
-                                    <a href="customer-wishlist.html"><i class="fa fa-list"></i>Treatment</a>
+                                    <a href="<?php echo base_url('TraumaTreatment/trauma_profile/1'); ?>"><i class="fa fa-list"></i>Treatment</a>
                                 </li>
                                 <li>
-                                    <a href="customer-account.html"><i class="fa fa-user"></i> My account</a>
+                                    <a href="<?php echo base_url('TraumaTreatment/trauma_profile/1'); ?>"><i class="fa fa-user"></i> My account</a>
                                 </li>
                                 <li>
-                                    <a href="index.html"><i class="fa fa-sign-out"></i> Logout</a>
+                                    <a href="<?php echo base_url('TraumaTreatment/trauma_profile/1'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
                                 </li>
                             </ul>
                         </div>
