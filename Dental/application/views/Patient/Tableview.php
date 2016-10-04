@@ -88,7 +88,7 @@ $(document).ready(function() {
 
                 <div class="col-md-3">
                     <!-- *** CUSTOMER MENU *** -->
-                    	<?php $this->load->view('Sidebar'); ?>
+                    	<?php  $this->load->view('Sidebar');  ?>
 
                     <!-- *** CUSTOMER MENU END *** -->
                 </div>	
