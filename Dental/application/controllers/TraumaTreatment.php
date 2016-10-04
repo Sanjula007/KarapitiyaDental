@@ -1,7 +1,4 @@
 <?php
-/*
-	*created by Sanjula(IT14119804)
-*/
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class TraumaTreatment extends CI_Controller {

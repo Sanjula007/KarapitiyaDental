@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-/*
-	*created by Sanjula(IT14119804)
-*/
+
 class Patient extends CI_Controller {
 
 	/**
