@@ -1,3 +1,4 @@
+<!--view all partient details-->
 <!DOCTYPE html>
 <html>
 <head>
