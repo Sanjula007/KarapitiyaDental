@@ -289,6 +289,11 @@ class TraumaTreatment extends CI_Controller {
 
 
 	}
+
+	public function update(){
+		
+		
+	}
 	
 
 	public function viewpage3(){
