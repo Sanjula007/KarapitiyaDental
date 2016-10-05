@@ -300,6 +300,18 @@ class TraumaTreatment extends CI_Controller {
 		$this->load->view('Patient/Form2/page3',$senddata);
 		$this->load->view('Footer');
 	}
+
+
+	public function update(){
+		$senddata['pid']=$_SESSION['pid'];
+		$this->load->library('form_validation');
+		$this->load->helper('form');
+		$this->load->view('Header');
+		//$this->load->view('Patient/Form2/page3',$senddata);
+		$this->load->view('Footer');
+
+
+	}
 	public  function check_healthy($value){
 
 		if($this->input->post('healthy')=='no'&&$value==''){
