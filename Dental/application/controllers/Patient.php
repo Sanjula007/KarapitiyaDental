@@ -154,8 +154,7 @@ class Patient extends CI_Controller {
 		}
 		
 	}
-<<<<<<< HEAD
-=======
+
 	/*
 		*view the all patients basic deatails 
 		*search patient
@@ -167,7 +166,7 @@ class Patient extends CI_Controller {
 		//$this->load->view('Footer');
 	}
 
->>>>>>> Sanjula
+
 	
 	
 	
