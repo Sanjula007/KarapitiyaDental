@@ -172,6 +172,7 @@ function submitformmd(){
                      <input type="number"  class="form-control"  id="smokingamt" name='smokingamt' placeholder='Amount' style='display:none;' value='<?php echo $trauma_medical_details[0]->smoking_number;?>'>
                   </div>
                 </div>
+                <input type="hidden" name="mdpid"  id='mdpid' value='<?php echo $patient[0]->id;?>' id='teeth'>
                 <div class="col-sm-12 text-center">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update </button>
                   <button type="reset" class="btn btn-primary"> Reset</button>

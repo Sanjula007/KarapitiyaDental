@@ -1,7 +1,7 @@
 <script type="text/javascript">
     var teeth=new Array();
     $( document ).ready(function() {
-    //submitform();
+    
     var str='<?php echo $trauma_examination[0]->teeth; ?>';
     var tooth=str.split(',');
     for(i=0; i<tooth.length; i++){
@@ -27,24 +27,26 @@
 
 });
 
-    function getteeth(id){}
+
+
+
 
 </script>
 
-</script>           
+</script>			
 
 <div class="container">
-    <div class="col-md-12">
-                    <div class="col-md-12">
+	<div class="col-md-12">
+					<div class="col-md-12">
 
-                        <ul class="breadcrumb">
-                            <li><a href="#">Patient</a>
-                            </li>
-                            <li>Profile</li>
-                        </ul>
+						<ul class="breadcrumb">
+							<li><a href="#">Patient</a>
+							</li>
+							<li>Profile</li>
+						</ul>
 
-                    </div>
-                    
+					</div>
+					
                 <div class="col-md-12">
                     <div class="box">
                         <h1>Patient </h1>
@@ -94,7 +96,7 @@
 
 
                     </div>
-                </div>  
+                </div>	
 
                 <div class="col-md-6">
                     <div class="box"  style="min-height: 280px ">
@@ -118,12 +120,12 @@
                             <?php } ?>
                         </table>  
 
-                        <button class='btn btn-primary pull-right' id='btnupdatemd' data-target="#updatemd">Update</button>
+                        <button class='btn btn-primary pull-right' id='btnupdatemd' data-target="#updatemd" onclick="showupmd()">Update</button>
                                   
 
 
                     </div>
-                </div>      
+                </div>  	
 
                 <div class="col-md-12">
                     <div class="box"  style="min-height: 500px ">
@@ -229,10 +231,10 @@
 
                          
                     </div>
-                    <button class='btn btn-primary pull-right'>Update</button>
+                    <!--<button class='btn btn-primary pull-right'>Update</button>-->
                     </div>
                 </div>  
-            
+			
                 <div class="col-md-12">
                     <div class="box"  style="min-height: 300px ">
                         <h4>X-ray Details</h4>
@@ -267,7 +269,7 @@
                             <?php } ?>
                         
 
-                            <button class='btn btn-primary pull-right'>Update</button>
+                            <button class='btn btn-primary pull-right' onclick='showupxray()'>Update</button>
                     </div>
                 </div> 
 
@@ -275,27 +277,27 @@
                     <div class='box'>
                         <div class="row" id='divteeths' >
                                 Teeth<br>
-                                <button  class="btn btn-default col-sm-1" id='btnt15' value='1' onclick='getteeth(this.id); return false;'>15</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt14' value='2' onclick='getteeth(this.id); return false;'>14</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt13' value='3' onclick='getteeth(this.id); return false;'>13</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt12' value='4' onclick='getteeth(this.id); return false;'>12</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt11' value='5' onclick='getteeth(this.id); return false;'>11</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt21' value='6' onclick='getteeth(this.id); return false;' >21</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt22' value='7' onclick='getteeth(this.id); return false;'>22</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt23' value='8' onclick='getteeth(this.id); return false;' >23</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt24' value='9' onclick='getteeth(this.id); return false;' >24</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt25' value='10' onclick='getteeth(this.id); return false;' >25</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt15' value='1'  >15</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt14' value='2'  >14</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt13' value='3'  >13</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt12' value='4'  >12</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt11' value='5'  >11</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt21' value='6'   >21</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt22' value='7'  >22</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt23' value='8'   >23</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt24' value='9'   >24</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt25' value='10'   >25</button>
                                 <br><br>
-                                <button  class="btn btn-default col-sm-1" id='btnt45' value='11' onclick='getteeth(this.id); return false;'>44</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt44' value='12' onclick='getteeth(this.id); return false;'>45</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt43' value='13' onclick='getteeth(this.id); return false;'>43</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt42' value='14' onclick='getteeth(this.id); return false;'>42</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt41' value='15' onclick='getteeth(this.id); return false;'>41</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt31' value='16' onclick='getteeth(this.id); return false;'>31</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt32' value='17' onclick='getteeth(this.id); return false;'>32</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt33' value='18' onclick='getteeth(this.id); return false;'>33</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt34' value='19' onclick='getteeth(this.id); return false;'>34</button>
-                                <button  class="btn btn-default col-sm-1" id='btnt35' value='20' onclick='getteeth(this.id); return false;'>35</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt45' value='11'  >45</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt44' value='12'  >44</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt43' value='13'  >43</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt42' value='14'  >42</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt41' value='15'  >41</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt31' value='16'  >31</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt32' value='17'  >32</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt33' value='18'  >33</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt34' value='19'  >34</button>
+                                <button  class="btn btn-default col-sm-1" id='btnt35' value='20'  >35</button>
                                 <br>
                                 
                                         <label class="  col-sm-4"   > 1.Infaction</label>
@@ -315,8 +317,8 @@
                                         <label class="col-sm-4"     > 15.Avulsion</label>
                                         <label class="col-sm-4"     > 16.Other</label>
                                         <label class="col-sm-4"  > 0.none</label>
-                                <input type="hidden" name="teeth"  value='<?php echo set_value('teeth'); ?>' id='teeth'>
-                                <button class='btn btn-primary pull-right'id='teethupdate'>Update</button>    
+                                
+                                <button class='btn btn-primary pull-right' onclick="showupteeth()">Update</button>    
                             </div>
                         
 
@@ -325,5 +327,5 @@
                 </div> 
 
 
-    </div>
+	</div>
 </div>
