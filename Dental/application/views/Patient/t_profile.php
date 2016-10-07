@@ -31,20 +31,20 @@
 
 </script>
 
-</script>			
+</script>           
 
 <div class="container">
-	<div class="col-md-12">
-					<div class="col-md-12">
+    <div class="col-md-12">
+                    <div class="col-md-12">
 
-						<ul class="breadcrumb">
-							<li><a href="#">Patient</a>
-							</li>
-							<li>Profile</li>
-						</ul>
+                        <ul class="breadcrumb">
+                            <li><a href="#">Patient</a>
+                            </li>
+                            <li>Profile</li>
+                        </ul>
 
-					</div>
-					
+                    </div>
+                    
                 <div class="col-md-12">
                     <div class="box">
                         <h1>Patient </h1>
@@ -94,7 +94,7 @@
 
 
                     </div>
-                </div>	
+                </div>  
 
                 <div class="col-md-6">
                     <div class="box"  style="min-height: 280px ">
@@ -115,16 +115,15 @@
                                 <td><label >Is smoking :</label></td>
                                 <td><label ><?php echo $row->smoking.'. '.$row->smoking_number;?></label></td>
                             </tr>
-
-
-
-
                             <?php } ?>
-                        </table>    
+                        </table>  
+
+                        <button class='btn btn-primary pull-right'>Update</button>
+                                  
 
 
                     </div>
-                </div>  	
+                </div>      
 
                 <div class="col-md-12">
                     <div class="box"  style="min-height: 500px ">
@@ -230,16 +229,17 @@
 
                          
                     </div>
-
+                    <button class='btn btn-primary pull-right'>Update</button>
                     </div>
                 </div>  
-			
+            
                 <div class="col-md-12">
                     <div class="box"  style="min-height: 300px ">
                         <h4>X-ray Details</h4>
-                        <div class="col-md-4">
-                        <table>
+                        
                             <?php foreach($trauma_teeth_details as $row){?>
+                        <div class="col-md-4">
+                            <table>
                             <tr>
                                 <td><label >Xray:</label></td>
                                 <td><label ><?php  ?></label></td>
@@ -259,15 +259,15 @@
                                 <td><label ><?php echo$row->xrayissues;?></label></td>
                             </tr>
                             </table>  
-                            </div>
-                            <div class="col-md-4">  
+                        </div>
+                        <div class="col-md-4">  
                             <img src="<?php echo base_url('uploads/patientimages/'. $row->xrayiamge);?>"  style="height:228px;">
-                            </div>
+                        </div>
 
                             <?php } ?>
                         
 
-
+                            <button class='btn btn-primary pull-right'>Update</button>
                     </div>
                 </div> 
 
@@ -316,7 +316,7 @@
                                         <label class="col-sm-4"     > 16.Other</label>
                                         <label class="col-sm-4"  > 0.none</label>
                                 <input type="hidden" name="teeth"  value='<?php echo set_value('teeth'); ?>' id='teeth'>
-                                
+                                <button class='btn btn-primary pull-right'>Update</button>    
                             </div>
                         
 
@@ -325,5 +325,5 @@
                 </div> 
 
 
-	</div>
+    </div>
 </div>
