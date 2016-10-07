@@ -1,7 +1,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript">
 $( document ).ready(function() {
-    //  submitformmd();
+    submitformxray();
 
 });
 
@@ -25,7 +25,7 @@ $( document ).ready(function() {
 </script>
 <script type="text/javascript">
  
-function submitformmd(){
+function submitformxray(){
 
   $('#upxrayform').submit(function(e){
     e.preventDefault();
@@ -87,7 +87,7 @@ function submitformmd(){
         <div class="col-sm-12">
 			     
               
-            <form id ='upxrayform' method=POST action="<?php echo base_url('index.php/TraumaTreatment/updatemedicaldetails')?>">                   
+            <form id ='upxrayform' method=POST action="<?php echo base_url('index.php/TraumaTreatment/updatexray')?>">                   
               <div class="col-sm-12">
                 <div class="col-md-12">  
                             <img src="<?php echo base_url('uploads/patientimages/'. $trauma_teeth_details[0]->xrayiamge);?>"  style="height:228px;">
@@ -113,7 +113,7 @@ function submitformmd(){
               <div class="col-sm-12">
                 <label>Diagnosis</label>
                 <textarea class="form-control" rows="5" id="diagnosis" name='diagnosis'  maxlength="150" ><?php echo $trauma_teeth_details[0]->diagnosis;?></textarea>
-                
+                <input type="hidden" name="xraypid"  id='xraypid' value='<?php echo $patient[0]->id;?>' id='teeth'>
               </div>
                 <div class="col-sm-12 text-center">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update </button>
