@@ -316,7 +316,7 @@
                                         <label class="col-sm-4"     > 16.Other</label>
                                         <label class="col-sm-4"  > 0.none</label>
                                 <input type="hidden" name="teeth"  value='<?php echo set_value('teeth'); ?>' id='teeth'>
-                                <button class='btn btn-primary pull-right'>Update</button>    
+                                <button class='btn btn-primary pull-right'id='teethupdate'>Update</button>    
                             </div>
                         
 
