@@ -118,7 +118,7 @@
                             <?php } ?>
                         </table>  
 
-                        <button class='btn btn-primary pull-right'>Update</button>
+                        <button class='btn btn-primary pull-right' id='btnupdatemd' data-target="#updatemd">Update</button>
                                   
 
 
