@@ -20,7 +20,7 @@ class TraumaTreatment extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		
 	}
 
 	public function trauma_profile($id){
@@ -38,6 +38,10 @@ class TraumaTreatment extends CI_Controller {
 		$data['trauma_examination']=$this->Trauma_model->trauma_examination($id);
 
 		$this->load->view('Patient/t_profile',$data);
+		$this->load->view('Patient/Form2/Update_md',$data);
+		$this->load->view('Patient/Form2/Update_xray');
+		$this->load->view('Patient/Form2/Update_teeth');
+
 		$this->load->view('Footer');
 
 
@@ -210,9 +214,12 @@ class TraumaTreatment extends CI_Controller {
 		}
 		
 	}
-
+		/*
+		*validate trauma registration page 3
+		*insert data to database
+	**/
 	public function vaildatepage3(){
-				$this->load->library('form_validation');
+		$this->load->library('form_validation');
 		$this->load->helper('form');
 		$data=array('success'=>false,'messages'=>array());
 
@@ -289,8 +296,11 @@ class TraumaTreatment extends CI_Controller {
 
 
 	}
-	
 
+	
+	/*
+		*view trauma registration page 3
+	**/
 	public function viewpage3(){
 
 		$senddata['pid']=$_SESSION['pid'];
@@ -300,6 +310,192 @@ class TraumaTreatment extends CI_Controller {
 		$this->load->view('Patient/Form2/page3',$senddata);
 		$this->load->view('Footer');
 	}
+
+	public function updatemedicaldetails(){
+		$this->load->library('form_validation');
+		$this->load->helper('form');
+		$data=array('success'=>false,'messages'=>array());
+
+		$this->form_validation->set_rules('healthy', 'Healthy', 'required');
+		$this->form_validation->set_rules('drug', 'Durg Allergies', 'required');
+		$this->form_validation->set_rules('smoking', 'smoking status', 'required');
+		
+		$this->form_validation->set_rules('txthealthy', 'Healthy', 'callback_check_healthy');
+		$this->form_validation->set_rules('txtda', 'Durg Allergies', 'callback_check_allergies');
+		$this->form_validation->set_rules('smokingamt', 'smoking status', 'callback_check_smoking');
+
+		$this->form_validation->set_error_delimiters('<p class="text-danger">','</p>');
+		if ($this->form_validation->run() == FALSE) {
+			//print_r($_POST);
+			foreach($_POST as $key =>$value){
+				$data['messages'][$key]=form_error($key);
+			}
+		}
+		else{
+			$id=$this->input->post('mdpid');
+			$mdata=array(
+				 
+				'healthy'=>$this->input->post('healthy'),
+				'healthy_details'=>$this->input->post('txthealthy'),
+				'allergies'=>$this->input->post('drug'),
+				'allergies_details'=>$this->input->post('txtda'), 
+				'smoking'=>$this->input->post('smoking'), 
+				'smoking_number'=>$this->input->post('smokingamt')
+			);
+			$this->load->model('Trauma_model');
+			$this->Trauma_model->update_trauma_medical_details($id,$mdata);
+			$data['success']=true;
+
+		}
+		
+		echo json_encode($data);
+
+	}
+
+	public function updatexray(){
+		$this->load->library('form_validation');
+		$this->load->helper('form');
+		$data=array('success'=>false,'messages'=>array());
+
+		//$this->form_validation->set_rules('pid', 'Patient ID', 'required');
+		//$this->form_validation->set_rules('plan', 'Plan', 'required|max_length[200]');
+		$this->form_validation->set_rules('finding', 'Finding', 'required|max_length[200]');
+		$this->form_validation->set_rules('diagnosis', 'Diagnosis', 'required|max_length[200]');
+		//$this->form_validation->set_rules('prognosis', 'Prognosis', 'required');
+		$this->form_validation->set_error_delimiters('<p class="text-danger">','</p>');
+		if ($this->form_validation->run() == FALSE) {
+			//print_r($_POST);
+			foreach($_POST as $key =>$value){
+				$data['messages'][$key]=form_error($key);
+		}
+		}
+		else{$pid=$this->input->post('xraypid');	
+
+			$config['upload_path']          = './uploads/patientimages/';
+            $config['allowed_types']        = '*';
+            $config['file_name']             = 'truamaxray'.$pid;
+            $config['overwrite']            = true;
+            // $config['max_height']           = 768;
+            //print_r($_FILES);
+            $this->load->library('upload', $config);
+
+			$teeth=	explode(",",$this->input->post('teeth'));
+			
+			$senddata=array(
+					
+					'finding'=>$this->input->post('finding'),
+					'diagnosis'=>$this->input->post('diagnosis'),
+					//'prognosis'=>$this->input->post('prognosis'),
+					//'plan'=>$this->input->post('plan'),
+					'xrayissues'=>implode(",",$this->input->post('xrayissues')),
+
+				);
+			if ( ! $this->upload->do_upload('pic')){
+            		//$senddata['extrafile']='none';
+            }
+            else{
+            	$datafile = array('pic' => $this->upload->data());
+            	$senddata['xrayiamge'] = $datafile['pic']['orig_name'] ;
+            }
+			//print_r($senddata);
+			$data['success']=true;
+			$this->load->model('Trauma_model');
+			$this->Trauma_model->update_trauma_teeth_details($pid,$senddata);
+			
+		}
+
+
+
+		echo json_encode($data);
+
+	}
+	public function updateteeth(){
+		$this->load->library('form_validation');
+		$this->load->helper('form');
+		$data=array('success'=>false,'messages'=>array());
+		
+		$this->form_validation->set_rules('upteeth', 'upteeth', 'required');
+		$this->form_validation->set_error_delimiters('<p class="text-danger">','</p>');
+
+		if ($this->form_validation->run() == FALSE) {
+			//print_r($_POST);
+			foreach($_POST as $key =>$value){
+				$data['messages'][$key]=form_error($key);
+		}}else{
+
+			$teeth=	explode(",",$this->input->post('upteeth'));
+			$pid=$this->input->post('tpid');
+			//echo $this->input->post('xrayissues');
+			$senddata=array(
+
+					't11'=>$teeth[0],
+					't12'=>$teeth[1],
+					't13'=>$teeth[2], 
+					't14'=>$teeth[3], 
+					't15'=>$teeth[4], 
+					't21'=>$teeth[5], 
+					't22'=>$teeth[6], 
+					't23'=>$teeth[7], 
+					't24'=>$teeth[8], 
+					't25'=>$teeth[9], 
+					't31'=>$teeth[10], 
+					't32'=>$teeth[11], 
+					't33'=>$teeth[12], 
+					't34'=>$teeth[13], 
+					't35'=>$teeth[14], 
+					't41'=>$teeth[15], 
+					't42'=>$teeth[16], 
+					't43'=>$teeth[17], 
+					't44'=>$teeth[18], 
+					't45'=>$teeth[19]
+				);
+				print_r($senddata);
+				$this->load->model('Trauma_model');
+				$this->Trauma_model->update_trauma_teeth_details($pid,$senddata);
+				$data['success']=true;
+
+		}
+		
+
+
+
+		echo json_encode($data);
+
+	}
+
+
+
+		public function updatexraydetails(){
+		$this->load->library('form_validation');
+		$this->load->helper('form');
+		$data=array('success'=>false,'messages'=>array());
+
+		$this->form_validation->set_rules('healthy', 'Healthy', 'required');
+		$this->form_validation->set_rules('drug', 'Durg Allergies', 'required');
+		$this->form_validation->set_rules('smoking', 'smoking status', 'required');
+		
+		$this->form_validation->set_rules('txthealthy', 'Healthy', 'callback_check_healthy');
+		$this->form_validation->set_rules('txtda', 'Durg Allergies', 'callback_check_allergies');
+		$this->form_validation->set_rules('smokingamt', 'smoking status', 'callback_check_smoking');
+
+		$this->form_validation->set_error_delimiters('<p class="text-danger">','</p>');
+		if ($this->form_validation->run() == FALSE) {
+			//print_r($_POST);
+			foreach($_POST as $key =>$value){
+				$data['messages'][$key]=form_error($key);
+		}
+		}
+
+
+
+		echo json_encode($data);
+
+	}
+
+
+	/*
+		*form validation rule for heathly field
+	*/
 	public  function check_healthy($value){
 
 		if($this->input->post('healthy')=='no'&&$value==''){
@@ -312,6 +508,10 @@ class TraumaTreatment extends CI_Controller {
 		return true;
 	
 	}
+
+	/*
+		*form validation rule for smoking field
+	*/
 	public  function check_smoking($value){
 
 		if($this->input->post('smoking')=='yes'&&$value==''){
@@ -324,6 +524,10 @@ class TraumaTreatment extends CI_Controller {
 		return true;
 	
 	}
+
+	/*
+		*form validation rule for other course field
+	*/
 	public  function check_other_cause($value){
 
 		if($this->input->post('causeot')=='other'&&$value==''){
@@ -336,6 +540,10 @@ class TraumaTreatment extends CI_Controller {
 		return true;
 	
 	}
+
+	/*
+		*form validation rule for allergie field
+	*/
 	public  function check_allergies($value){
 		
 		if($this->input->post('drug')=='yes'&&$value==''){
@@ -348,6 +556,10 @@ class TraumaTreatment extends CI_Controller {
 		return true;
 	
 	}
+
+	/*
+		*form validation rule for mortor bike field
+	*/
 	public  function check_morterbike($value){
 		
 		if($this->input->post('causeot')=='RTA:Motor bike'&&$value==''){
@@ -360,6 +572,10 @@ class TraumaTreatment extends CI_Controller {
 		return true;
 	
 	}
+
+	/*
+		*form validation rule for vhicle field
+	*/
 	public  function check_vehicle($value){
 		
 		if($this->input->post('causeot')=='RTA:Other vehicles'&&$value==''){
