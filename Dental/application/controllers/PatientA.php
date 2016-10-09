@@ -11,8 +11,8 @@ class PatientA extends CI_Controller {
 		$select=' id, title, fname, lname, address, email, phone, gender, dob, regdatetime';
 		$table1 ='patient';
 		$where='id=id';
-		$column_order =array(' id','fname', 'address', 'email', 'phone',' gender', 'dob', 'regdatetime'); 
-		$column_search=array(' id','fname', 'address', 'email', 'phone', 'gender', 'dob', 'regdatetime'); ;
+		$column_order =array(' id','CONCAT(fnamelname)', 'address', 'email', 'phone',' gender', 'dob', 'regdatetime'); 
+		$column_search=array(' id','CONCAT(fname,lname)', 'address', 'email', 'phone', 'gender', 'dob', 'regdatetime'); ;
 		$order=array('regdatetime'=>'desc');
 		
 		$list = $this->Ajax->get_datatables($table1,$select,$where,$column_order,$column_search,$order);
