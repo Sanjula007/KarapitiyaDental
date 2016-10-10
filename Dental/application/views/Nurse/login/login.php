@@ -14,7 +14,7 @@
                     <h1>Login</h1>
                     <hr>
 
-                    <?= form_open('index.php/Nurse/login') ?>
+                    <?= form_open('Nurse/login') ?>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" class="form-control" id="email" name="email">

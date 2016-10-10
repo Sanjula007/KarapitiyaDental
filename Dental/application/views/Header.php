@@ -63,7 +63,7 @@
             <div class="col-md-10" >
                 <ul class="menu">
                     <?php if (isset($_SESSION['name']) && $_SESSION['logged_in'] === true) : ?>
-                        <li><a href="<?= base_url('index.php/Nurse/logout') ?>">Logout</a></li>
+                        <li><a href="<?= base_url('Nurse/logout') ?>">Logout</a></li>
                     <?php else : ?>
                         <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>
                         </li>
@@ -83,7 +83,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Customer login</h4>
+                        <h4 class="modal-title" id="Login">login</h4>
                     </div>
                     <div class="modal-body">
                         <form action="<?php echo base_url('index.php/Nurse/login')?>" method="post">

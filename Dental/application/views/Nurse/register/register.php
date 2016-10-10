@@ -21,7 +21,7 @@
 
                     <p class="lead">Not yet registered?</p>
                     <hr>
-                    <?= form_open('index.php/Nurse/register') ?>
+                    <?= form_open('Nurse/register') ?>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter a username" >
