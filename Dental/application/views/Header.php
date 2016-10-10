@@ -62,10 +62,14 @@
             </div>
             <div class="col-md-10" >
                 <ul class="menu">
-                    <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>
-                    </li>
-                    <li><a href="<?php echo base_url('assest/'); ?>register.html">Register</a>
-                    </li>
+                    <?php if (isset($_SESSION['name']) && $_SESSION['logged_in'] === true) : ?>
+                        <li><a href="<?= base_url('index.php/Nurse/logout') ?>">Logout</a></li>
+                    <?php else : ?>
+                        <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>
+                        </li>
+                        <li><a href="<?php echo base_url('index.php/Nurse')?>">Register</a>
+                        </li>
+                    <?php endif; ?>
                     <li><a href="<?php echo base_url('assest/'); ?>contact.html">Contact</a>
                     </li>
                     <li><a href="<?php echo base_url('assest/'); ?>#">Recently viewed</a>
@@ -82,7 +86,7 @@
                         <h4 class="modal-title" id="Login">Customer login</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
+                        <form action="<?php echo base_url('index.php/Nurse/login')?>" method="post">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="email-modal" placeholder="email">
                             </div>
