@@ -231,7 +231,7 @@
                 }
 
                 // user logout ok
-                redirect('index.php/Nurse/loginView');
+                redirect('Nurse/loginView');
 
             } else {
 
