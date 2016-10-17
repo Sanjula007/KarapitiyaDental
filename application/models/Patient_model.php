@@ -26,10 +26,12 @@ class Patient_model extends CI_Model
 	}
 
 
-	public function getPeriodicalChart(){
+	public function getPeriodicalChart($id){
 		$this->load->database();
 		$this->db->select('*');
-		$this->db->from('periodical_examination');
+		$this->db->from('periodical_examination a');
+		$this->db->join('patient p','p.id = a.pid');
+		$this->db->where('a.pid',$id);
 
 		$query = $this->db->get();
 		return $query->result();
@@ -40,6 +42,7 @@ class Patient_model extends CI_Model
 		$this->load->database();
 		$this->db->from('patient');
 		$this->db->where('id',$id);
+
 		
 		$query = $this->db->get();
 		return $query->result();
@@ -51,6 +54,7 @@ class Patient_model extends CI_Model
 		$this->load->database();
 		$this->db->select('*');
 		$this->db->from('patient');
+	
 
 		$query = $this->db->get();
 		return $query->result();

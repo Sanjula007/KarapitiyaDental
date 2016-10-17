@@ -92,14 +92,25 @@ class Patient extends CI_Controller {
 
 	public function periodicalExaminationChart(){
 
+
+		$this->load->model('patient_model');
+		$patient['p'] = $this->patient_model->getPatientAlldetails();
+
+
 		$this->load->helper('url');
 		$this->load->view('Header');
-		$this->load->view('Patient/periodical_exam');
+		$this->load->view('Patient/periodical_exam',$patient);
 		$this->load->view('Footer');
-		$this->load->model('patient_model');
+		
 
+	}
+
+	public function saveExaminationChart(){
+
+		$this->load->model('patient_model');
 		 $form_data = $this->input->post();
 		 $data = array(
+		 'pid'=>$this->input->post('form_patients'),
 		 'tooth' =>	$this->input->post('form_tooth'),
 		 'jaw'	=> $this->input->post("form_jaw"),
 		 'vitality' => $this->input->post("form_vitality"),
@@ -110,15 +121,20 @@ class Patient extends CI_Controller {
 		 );
 
 		 $this->patient_model->save_pExamChart($data);
+
+		 redirect('patient/periodicalExaminationChart');
+
 	}
 
 
 	public function viewperiodical_exam(){
 
+		$this->load->helper('url');
+		$pid = $this->uri->segment(3);
 
-		$data   = array();
 		$this->load->model('patient_model');
-		$data['patient'] = $this->patient_model->getPeriodicalChart();
+		$data['patient'] = $this->patient_model->getPeriodicalChart($pid);
+		$data['p'] = $this->patient_model->getPatientAlldetails();
 
 		$this->load->view('Header');
 		$this->load->view('Patient/viewperiodical_exam',$data);
@@ -126,6 +142,7 @@ class Patient extends CI_Controller {
 
 
 	}
+
 
 
 	public function viewPatientList(){
@@ -140,6 +157,10 @@ class Patient extends CI_Controller {
 		$this->load->view('Patient/patientsList',$data);
 		$this->load->view('Footer');
 	}
+
+	
+
+
 
 	public function test(){
 
