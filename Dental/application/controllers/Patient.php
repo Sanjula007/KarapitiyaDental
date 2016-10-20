@@ -154,6 +154,19 @@ class Patient extends CI_Controller {
 		}
 		
 	}
+
+	/*
+		*view the all patients basic deatails 
+		*search patient
+	*/
+	public function patients(){
+
+		$this->load->view('Header');
+		$this->load->view('Patient/Tableview');
+		//$this->load->view('Footer');
+	}
+
+
 	
 	
 	

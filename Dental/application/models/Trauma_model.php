@@ -105,6 +105,21 @@ class Trauma_model extends CI_Model
 		
 		
 	}
+
+	public function update_trauma_teeth_details($id,$data){
+			$this->load->database();
+			$this->db->where('pid',$id);
+			$this->db->update('trauma_teeth_details',$data);
+			
+
+	}
+	public function update_trauma_medical_details($id,$data){
+			$this->load->database();
+			$this->db->where('pid',$id);
+			$this->db->update('trauma_medical_details',$data);
+			
+
+	}
 	public function trauma_teeth_details($id){
 		$this->load->database();
 		$this->db->from('trauma_teeth_details');
