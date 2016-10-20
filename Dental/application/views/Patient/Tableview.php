@@ -81,7 +81,7 @@ $(document).ready(function() {
                     <ul class="breadcrumb">
                         <li><a href="index.html">Home</a>
                         </li>
-                        <li>My wishlist</li>
+                        <li>Partient List</li>
                     </ul>
 
                 </div>
@@ -92,17 +92,17 @@ $(document).ready(function() {
                     <div class="panel panel-default sidebar-menu">
 
                         <div class="panel-heading">
-                            <h3 class="panel-title">Customer section</h3>
+                            <h3 class="panel-title">Doctor</h3>
                         </div>
 
                         <div class="panel-body">
 
                             <ul class="nav nav-pills nav-stacked">
                                 <li class="active">
-                                    <a href="customer-orders.html"><i class="fa fa-list"></i> My orders</a>
+                                    <a href="customer-orders.html"><i class="fa fa-list"></i>Patient</a>
                                 </li>
                                 <li>
-                                    <a href="customer-wishlist.html"><i class="fa fa-heart"></i> My wishlist</a>
+                                    <a href="customer-wishlist.html"><i class="fa fa-list"></i>trauma Treatmen</a>
                                 </li>
                                 <li>
                                     <a href="customer-account.html"><i class="fa fa-user"></i> My account</a>

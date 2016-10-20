@@ -62,6 +62,13 @@
             </div>
             <div class="col-md-10" >
                 <ul class="menu">
+<<<<<<< HEAD
+                    <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    </li>
+                    <li><a href="<?php echo base_url('assest/'); ?>register.html">Register</a>
+                    </li>
+                    <!--<li><a href="<?php echo base_url('assest/'); ?>contact.html">Contact</a>
+=======
                     <?php if (isset($_SESSION['name']) && $_SESSION['logged_in'] === true) : ?>
                         <li><a href="<?= base_url('Nurse/logout') ?>">Logout</a></li>
                     <?php else : ?>
@@ -71,9 +78,10 @@
                         </li>
                     <?php endif; ?>
                     <li><a href="<?php echo base_url('assest/'); ?>contact.html">Contact</a>
+>>>>>>> origin/master
                     </li>
                     <li><a href="<?php echo base_url('assest/'); ?>#">Recently viewed</a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
         </div>
@@ -115,7 +123,7 @@
     <!-- *** NAVBAR ***
  _________________________________________________________ -->
 
-    <div class="navbar navbar-Best Prices yamm" role="navigation" id="navbar">
+    <div class="navbar navbar-Best Prices yamm" role="navigation" id="top">
         <div class="container">
             <div class="navbar-header">
 				<!--
@@ -133,7 +141,7 @@
             </div>
             <!--/.navbar-header -->
 
-            <div class="navbar-collapse collapse" id="navigation">
+            <div class="navbar-collapse collapse" id="navigation" style="">
 
                 <ul class="nav navbar-nav navbar-left">
                     <li class="active"><a href="<?php echo base_url('assest/'); ?>index.html">Home</a>
@@ -200,7 +208,7 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="<?php echo base_url('assest/'); ?>basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">none</span></a>
+                    <!--<a href="<?php echo base_url('assest/'); ?>basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">none</span></a>-->
                 </div>
                 <!--/.nav-collapse -->
 
