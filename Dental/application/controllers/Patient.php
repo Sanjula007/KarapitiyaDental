@@ -88,14 +88,64 @@ class Patient extends CI_Controller {
 		
 		
 	}
-	/*
-		*patcient details for axjx request
-	*/
+	
+
+	public function periodicalExaminationChart(){
+
+		$this->load->helper('url');
+		$this->load->view('Header');
+		$this->load->view('Patient/examination_chart');
+		$this->load->view('Footer');
+
+
+	}
+
+
+	public function viewPatientList(){
+
+		$data   = array();
+
+		$this->load->model('patient_model');
+		$data['result'] = $this->patient_model->getPatientAlldetails();
+
+		$this->load->helper('url');
+		$this->load->view('Header');
+		$this->load->view('Patient/patientsList',$data);
+		$this->load->view('Footer');
+	}
+
+	public function test(){
+
+		$this->load->view('Header');
+		$this->load->view('Patient/page2');
+		$this->load->view('Footer');
+	}
+	
+
+
+	public function viewDetails(){
+
+		 $this->load->helper('url');
+		$pid = $this->uri->segment(3);
+		$data   = array();
+		
+		$this->load->model('patient_model');
+		$data['patient']=$this->patient_model->getselectedPatientDetails($pid);
+
+			$this->load->view('Header');
+			$this->load->view('Patient/viewDetails',$data);
+			$this->load->view('Footer');
+		
+
+
+	}
+	
+	
 	public function ajaxPatientDetails(){
 		
 		$this->load->model('patient_model');
 		$data['patient']=$this->patient_model->getpatientdetails($this->input->post('postid'));
-
+		//echo $this->input->post('postid');
 		if(count($data['patient'])==1){
 			$this->load->view('Patient/Form2/patient_details',$data);
 		}
@@ -104,6 +154,7 @@ class Patient extends CI_Controller {
 		}
 		
 	}
+
 	/*
 		*view the all patients basic deatails 
 		*search patient
@@ -114,6 +165,7 @@ class Patient extends CI_Controller {
 		$this->load->view('Patient/Tableview');
 		//$this->load->view('Footer');
 	}
+
 
 	
 	

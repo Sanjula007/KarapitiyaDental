@@ -35,6 +35,30 @@ class Patient_model extends CI_Model
 		
 		
 	}
+
+	public function getPatientAlldetails(){
+		$this->load->database();
+		$this->db->select('*');
+		$this->db->from('patient');
+
+		$query = $this->db->get();
+		return $query->result();
+
+	}
+
+
+	public function getselectedPatientDetails($pid){
+
+		$this->load->database();
+		$this->db->select('*');
+		$this->db->from('patient');
+		$this->db->where('id',$pid);
+		
+		$query = $this->db->get();
+		return $query->result();
+
+
+	}
 	
 	
 

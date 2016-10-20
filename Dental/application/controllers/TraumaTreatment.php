@@ -299,6 +299,7 @@ class TraumaTreatment extends CI_Controller {
 
 
 	}
+
 	
 	/*
 		*view trauma registration page 3
