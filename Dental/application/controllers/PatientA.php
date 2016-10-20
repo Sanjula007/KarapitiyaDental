@@ -4,7 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class PatientA extends CI_Controller {
 
 
-
+	/*
+		*view the all patient details
+		*ajax request for patient table
+	*/
 	public function getpatient(){
 		
 		$this->load->model('Ajax_select_where_model','Ajax');

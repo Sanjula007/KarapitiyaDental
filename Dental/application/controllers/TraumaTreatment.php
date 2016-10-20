@@ -22,7 +22,10 @@ class TraumaTreatment extends CI_Controller {
 	{
 		
 	}
-
+	/*
+		*view the profile of truma
+		*update trauma details
+	*/
 	public function trauma_profile($id){
 
 		$this->load->library('form_validation');
@@ -350,7 +353,9 @@ class TraumaTreatment extends CI_Controller {
 		echo json_encode($data);
 
 	}
-
+	/*
+		*udate the xray details of the patients
+	*/
 	public function updatexray(){
 		$this->load->library('form_validation');
 		$this->load->helper('form');
@@ -408,6 +413,9 @@ class TraumaTreatment extends CI_Controller {
 		echo json_encode($data);
 
 	}
+		/*
+		*udate the teath details of the patients
+	*/
 	public function updateteeth(){
 		$this->load->library('form_validation');
 		$this->load->helper('form');
@@ -462,7 +470,9 @@ class TraumaTreatment extends CI_Controller {
 
 	}
 
-
+	/*
+		*udate the xray details of the patients
+	*/
 
 		public function updatexraydetails(){
 		$this->load->library('form_validation');
@@ -491,7 +501,7 @@ class TraumaTreatment extends CI_Controller {
 
 	}
 
-
+	/******************************************custom validations****************************************************/
 	/*
 		*form validation rule for heathly field
 	*/
