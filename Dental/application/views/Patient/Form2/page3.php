@@ -108,7 +108,7 @@ function submitform(){
 					$('.form-group').removeClass('has-error').removeClass('has-success');
 					$('.text-danger').remove();
 					me[0].reset();//loadAssignmenttable();
-					window.location.replace("<?php echo base_url('index.php/TraumaTreatment/trauma_profile/')?>"+1);
+					//window.location.replace("<?php echo base_url('index.php/TraumaTreatment/trauma_profile/')?>"+1);
 
 				}
 				else{
@@ -333,7 +333,7 @@ function submitform(){
         <h4 class="modal-title">Message </h4>
       </div>
       <div class="modal-body">
-			Informatio Saved Successfully...!
+			Information Saved Successfully...!
 
       </div>
       <div class="modal-footer">
