@@ -101,7 +101,7 @@
          * @param mixed $user_id
          * @return object the user object
          */
-        public function get_username($user_id) {
+       /* public function get_username($user_id) {
 
 
             $query = $this -> db -> get_where('nurse',array('id'=> $user_id));//select all from table users where password equals to username
@@ -109,7 +109,7 @@
             /*$this->db->select('name');
             $this->db->from('nurse');
             $this->db->where('id', $user_id);
-            return $this->db->get()->row();*/
+            return $this->db->get()->row();
         }
         /**
          * saving session into db.
@@ -128,6 +128,40 @@
                 return true;
             }
         }
+
+
+        /**
+         * get_user function.
+         *
+         * @access public
+         * @param mixed $user_id
+         * @return object the user object
+         */
+        public function edit_user($id,$name) {
+
+            $this->db->set('name', $name);
+            $this->db->where('id' ,$id);
+            $this->db->update('nurse');
+            return true;
+
+        }
+
+        /**
+         * resset password function.
+         *
+         * @access public
+         * @param mixed $user_id
+         * @return object the user object
+         */
+        public function reset_password($id,$password) {
+
+            $this->db->set('password', $password);
+            $this->db->where('id' ,$id);
+            $this->db->update('nurse');
+            return true;
+
+        }
+
 
     }
 ?>

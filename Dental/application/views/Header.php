@@ -70,6 +70,7 @@
                     <!--<li><a href="<?php echo base_url('assest/'); ?>contact.html">Contact</a>
 =======
                     <?php if (isset($_SESSION['name']) && $_SESSION['logged_in'] === true) : ?>
+
                         <li><a href="<?= base_url('Nurse/logout') ?>">Logout</a></li>
                     <?php else : ?>
                         <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>

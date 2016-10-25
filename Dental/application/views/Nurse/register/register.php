@@ -45,7 +45,7 @@
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
                     </div>
-                    </form>
+
                 </div>
             </div>
 

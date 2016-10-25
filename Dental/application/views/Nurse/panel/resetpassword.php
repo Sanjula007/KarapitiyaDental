@@ -26,7 +26,7 @@
 
                         <ul class="nav nav-pills nav-stacked">
                             <li class="active">
-                                <a href="customer-orders.html"><i class="fa fa-edit"></i> My Account</a>
+                                <a href="<?= base_url('index.php/Settings/panelView') ?>"><i class="fa fa-edit"></i> My Account</a>
                             </li>
                             <li>
                                 <a href="<?= base_url('index.php/Patient/registration') ?>"><i class="fa fa-heart"></i> Patients</a>
@@ -49,17 +49,25 @@
             <div class="col-md-9">
                 <div class="box">
                     <h1>My account</h1>
-                    <p class="lead">Change your personal details or your password here.</p>
+                    <p class="lead">Change your password here.</p>
                     <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-
+                    <?php if (isset($error)) : ?>
+                        <div class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                <?= $error ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                     <h3>Change password</h3>
 
-                    <form>
+                    <?= form_open('Settings/resetPassword') ?>
+                    <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $_SESSION['id'];?>" >
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="password_old">Old password</label>
-                                    <input type="password" class="form-control" id="password_old">
+                                    <input type="password" class="form-control" id="password_old" name="password_old">
+                                    <label ><span style="color:#d9534f;"><?php echo form_error('password_old'); ?></span></label>
                                 </div>
                             </div>
                         </div>
@@ -67,26 +75,31 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="password_1">New password</label>
-                                    <input type="password" class="form-control" id="password_1">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="new password">
+                                    <label ><span style="color:#d9534f;"><?php echo form_error('password'); ?></span></label>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="password_2">Retype new password</label>
-                                    <input type="password" class="form-control" id="password_2">
+                                    <label for="password_2">Confirm password</label>
+                                    <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="confirm new password">
+                                    <label ><span style="color:#d9534f;"><?php echo form_error('password_confirm'); ?></span></label>
                                 </div>
                             </div>
                         </div>
                         <!-- /.row -->
-
+                    <div class="row">
                         <div class="col-sm-12 text-center">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save new password</button>
                         </div>
-                    </form>
+
                 </div>
             </div>
 
 
+            </div>
+            <!-- /.container -->
+        </div>
             <!-- /.container -->
         </div>
         <!-- /#content -->
