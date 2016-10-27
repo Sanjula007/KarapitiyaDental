@@ -81,7 +81,12 @@ class Patient_model extends CI_Model
 		$this->db->insert('periodical_examination',$data);
 	}
 	
-	
+	public function save_NewpExamChart($data,$id){
+
+		$this->load->database();
+		$this->db->where('pid',$id);
+		$this->db->update('periodical_examination',$data);
+	}
 
 	
 	

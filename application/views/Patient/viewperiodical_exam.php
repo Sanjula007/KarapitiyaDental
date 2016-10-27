@@ -53,7 +53,7 @@ document.getElementById('selectPatient').value=last_segment;
 </select>
 
 <center>
-<h2><u> View Periodical Examination Details </u> </h2>
+<h2><u><p> View Periodical Examination Details </u> </h2></p>
 <table style="width:25%;">
 <tr>
 <?php foreach ($patient as $pa) { ?>
@@ -80,15 +80,17 @@ document.getElementById('selectPatient').value=last_segment;
 
 <?php if (empty($row->tooth)) echo "Patient Details Not Availeble"; ?>
 
-
-<td><?php echo $row->tooth;?></td>
 <td><?php echo $row->jaw;?></td>
 <td><?php echo $row->vitality;?></td>
 <td><?php echo $row->recesson;?></td>
+
+<td><?php echo $row->tooth;?></td>
 <td><?php echo $row->fucation;?></td>
 <td><?php echo $row->mobility;?></td>
 <td><?php echo $row->pocketDepth;?></td>
-<td><input type="button" class="btn btn-xs btn-danger pull-right" value="Edit"></td>
+<?php $pid = $row->id; ?>
+<td><input type="button" class="btn btn-xs btn-primary pull-right" value="Edit" onclick="location.href='<?php echo base_url();?>index.php/patient/editPeriodicalDetails/<?php echo $pid;?>'"></td>
+<td><input type="button" class="btn btn-xs btn-danger pull-right" value="Delete" onclick="location.href='<?php echo base_url();?>index.php/patient/editPeriodicalDetails/<?php echo $pid;?>'"> </td>
 </tr>
 
 <?php } ?>

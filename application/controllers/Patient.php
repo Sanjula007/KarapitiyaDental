@@ -127,6 +127,30 @@ class Patient extends CI_Controller {
 	}
 
 
+	public function saveNewExaminationChart(){
+
+		$this->load->helper('url');
+		$pid = $this->uri->segment(3);
+
+		 $this->load->model('patient_model');
+		 $form_data = $this->input->post();
+		 $data = array(
+		 'tooth' =>	$this->input->post('form_tooth'),
+		 'jaw'	=> $this->input->post("form_jaw"),
+		 'vitality' => $this->input->post("form_vitality"),
+		 'recesson'  => $this->input->post("form_recesson"),
+		 'fucation'  =>$this->input->post("form_fucation"),
+ 		 'mobility'  =>$this->input->post("form_mobility"),	
+		 'pocketDepth'  => $this->input->post("form_pocketDepth")
+		 );
+
+		 $this->patient_model->save_NewpExamChart($data,$pid);
+
+		 redirect('patient/viewperiodical_exam/'.$pid);
+
+	}
+
+
 	public function viewperiodical_exam(){
 
 		$this->load->helper('url');
@@ -180,7 +204,7 @@ class Patient extends CI_Controller {
 		$data   = array();
 		
 		$this->load->model('patient_model');
-		$data['patient']=$this->patient_model->getselectedPatientDetails($pid);
+		$data['patient']=$this->patient_model->getPeriodicalChart($pid);
 
 			$this->load->view('Header');
 			$this->load->view('Patient/viewDetails',$data);
@@ -189,7 +213,45 @@ class Patient extends CI_Controller {
 
 
 	}
+
+
+	public function editPeriodicalDetails(){
+
+		$pid = $this->uri->segment(3);
+		$this->load->model('patient_model');
+		//$result= $this->patient_model->getPeriodicalChart($pid);
+		$patient['pd'] = $this->patient_model->getPeriodicalChart($pid);
+
+
+		$this->load->helper('url');
+		$this->load->view('Header');
+		$this->load->view('Patient/editPeriodicalExam',$patient);
+		$this->load->view('Footer');
+
+
+	}
 	
+
+	public function treatmentPlan(){
+
+
+		$this->load->view('Header');
+		$this->load->view('Patient/treatmentPlan');
+		$this->load->view('Footer');
+
+		$this->load->model('patient_model');
+		$form_data = $this->input->post();
+		 $data = array(
+
+		 'treatmentDate'=>$this->input->post('form_treatmentDate'),
+		 'nxtTreatmentDate'=>$this->input->post('form_nxtTreatmentDate'),
+		 'note'=>=>$this->input->post('form_note')
+		 );
+
+		 $this->patient_model->save_treatmentPlan($data,$pid);
+
+		
+	}
 	
 	public function ajaxPatientDetails(){
 		
