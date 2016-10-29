@@ -105,7 +105,7 @@ function submitform(){
             processData: false,
             success: function(response){
                 if(response.success==true){
-                    $('#mymodel').modal('show')  ; 
+                    $('#modelmsg').modal('show')  ;  
                     $('.form-group').removeClass('has-error').removeClass('has-success');
                     $('.text-danger').remove();
                     me[0].reset();//loadAssignmenttable();
@@ -132,3 +132,25 @@ function submitform(){
     );
 }
 </script>
+
+<!-- Modal -->
+<div id="modelmsg" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Stock </h4>
+      </div>
+      <div class="modal-body">
+            Information Saved Successfully...!
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
