@@ -20,6 +20,12 @@ class Equipment extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->view('Header');
+		$this->load->view('Stock/All_stock');
+		//$this->load->view('Footer');
+	}
+
+	public function new_item(){
 		$this->load->library('form_validation');
 		$this->load->helper('form');
 		$this->load->model('Equipment_model');
@@ -52,6 +58,26 @@ class Equipment extends CI_Controller {
 			}
 		}
 		else{
+
+			$senddata = array(
+				'name'=>$this->input->post('name'),
+				'category_id'=>$this->input->post('category'),
+				'model'=>$this->input->post('model'), 
+				'qut'=>$this->input->post('qnt'), 
+				'description' =>$this->input->post('description')
+				  );
+
+			$this->load->model('Equipment_model');
+			$eq_id=$this->Equipment_model->insert_equipment($senddata);
+			if($eq_id>=0){
+				$logdata = array(
+					'eq_id' => $eq_id,
+					'description'=>'Item added',
+					'qnt'=>$this->input->post('qnt'), 
+					'date'=>date('Y-m-d')
+				 );
+				$this->Equipment_model->insert_equipment_log($logdata);
+			}
 
         	
 			$data['success']=true;
