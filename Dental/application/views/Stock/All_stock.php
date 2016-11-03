@@ -6,7 +6,7 @@
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
 	<title>Stock</title>
 	<!--<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
-	<link rel="stylesheet" type="text/css" href="../../media/css/dataTables.bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/media/css/dataTables.bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css">
 	
 	<style type="text/css" class="init">
@@ -14,14 +14,14 @@
 	</style>
 	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
 	</script>
-	<script type="text/javascript" language="javascript" src="../../media/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" language="javascript" src="<?= base_url(); ?>/media/js/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js">
 	</script>
 	<script type="text/javascript" src="//cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js">
 	</script>
-	<script type="text/javascript" language="javascript" src="../../media/js/dataTables.bootstrap.js">
+	<script type="text/javascript" language="javascript" src="<?= base_url(); ?>/media/js/dataTables.bootstrap.js">
 	</script>
-	<script type="text/javascript" language="javascript" src="../../resources/syntax/shCore.js">
+	<script type="text/javascript" language="javascript" src="<?= base_url(); ?>/resources/syntax/shCore.js">
 	</script>
 
 	<script type="text/javascript" language="javascript" class="init">
@@ -83,6 +83,7 @@ $(document).ready(function() {
 </script>
 
 </head>
+</head>
     <div id="all" >
 
         <div id="content">
@@ -91,45 +92,15 @@ $(document).ready(function() {
                 <div class="col-md-12">
 
                     <ul class="breadcrumb">
-                        <li><a href="index.html">Stock</a>
+                        <li><a href="index.html">Home</a>
                         </li>
-                        <li>List</li>
+                        <li>Stock</li>
                     </ul>
 
                 </div>
 
-                <div class="col-md-3">
-                    <!-- *** CUSTOMER MENU ***
- _________________________________________________________ -->
-                   <div class="panel panel-default sidebar-menu">
+                <?php $this->load->view('SideBar'); ?>
 
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctor</h3>
-                        </div>
-
-                        <div class="panel-body">
-
-                            <ul class="nav nav-pills nav-stacked">
-                                <li class="active">
-                                    <a href="<?= base_url('index.php/'); ?>"><i class="fa fa-list"></i>Patient</a>
-                                </li>
-                                <li>
-                                    <a href="<?= base_url('index.php/'); ?>"<i class="fa fa-list"></i>Trauma Treatment</a>
-                                </li>
-                                <li>
-                                    <a href="<?= base_url('index.php/'); ?>"><i class="fa fa-user"></i> My account</a>
-                                </li>
-                                <li>
-                                    <a href="<?= base_url('index.php/'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <!-- /.col-md-3 -->
-
-                    <!-- *** CUSTOMER MENU END *** -->
-                </div>	
  	<div class="col-md-9">
  		 <div class="box">
 		<section>
