@@ -45,7 +45,7 @@ class Restorative extends CI_Controller {
             'nor'=>$this->input->get('nor'),
         );
 
-         $this->load->model('Restorative_model');
+        $this->load->model('Restorative_model');
         $id=$this->Restorative_model->insert_examination($data);
     }
 
