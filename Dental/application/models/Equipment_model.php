@@ -51,6 +51,26 @@ class Equipment_model extends CI_Model
 		
 		
 	}
+
+	public function getequipment($id){
+
+		$this->load->database();
+		$this->db->from('equipment');
+		$this->db->where('id',$id);
+		
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	public function update_equipment($id,$data){
+
+		$this->load->database();
+		$this->db->where('id',$id);
+		$this->db->update('equipment',$data);
+		
+		
+
+	}
 	
 	
 
