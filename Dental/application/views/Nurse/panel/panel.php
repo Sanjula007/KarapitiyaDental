@@ -26,7 +26,7 @@
 
                         <ul class="nav nav-pills nav-stacked">
                             <li class="active">
-                                <a href="customer-orders.html"><i class="fa fa-edit"></i> My Account</a>
+                                <a href="<?= base_url('index.php/Settings/panelView')?>"><i class="fa fa-edit"></i> My Account</a>
                             </li>
                             <li>
                                 <a href="<?= base_url('index.php/Patient/registration') ?>"><i class="fa fa-heart"></i> Patients</a>
@@ -48,17 +48,13 @@
 
             <div class="col-md-9" id="customer-orders">
                 <div class="box">
-                    <?php
-                    foreach($posts->result() as $post)
-                    {
-                        ?>
-                        <h1>Hi <?php echo $post->name;?>!!</h1>
-                        <?php
-                    }
-                    ?>
+
+
+                        <h1>Hi  <?php echo $_SESSION['name'];?>!!</h1>
 
                     <p class="lead">Update your account.</p>
                     <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
+
 
 
 
@@ -70,14 +66,14 @@
                                 <th>Username</th>
                                 <td><span class="label label-info">Do you want to change your username? </span>
                                 </td>
-                                <td><a href="customer-order.html" class="btn btn-primary btn-sm">change</a>
+                                <td><a href="<?= base_url('index.php/Settings/editView') ?>" class="btn btn-primary btn-sm">change</a>
                                 </td>
                             </tr>
                             <tr>
                                 <th>Password</th>
                                 <td><span class="label label-danger">Do you want to reset your password? </span>
                                 </td>
-                                <td><a href="<?= base_url('index.php/Settings/resetPassView') ?>" class="btn btn-primary btn-sm">Reset</a>
+                                <td><a href="<?= base_url('index.php/Settings/resetView') ?>" class="btn btn-primary btn-sm">Reset</a>
                                 </td>
                             </tr>
 

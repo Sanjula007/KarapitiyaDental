@@ -27,4 +27,7 @@ class Welcome extends CI_Controller {
 		
 		$this->load->view('Header');
 	}
+	public function test(){
+		echo "welcome!!";
+	}
 }

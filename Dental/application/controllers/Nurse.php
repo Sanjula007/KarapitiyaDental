@@ -167,11 +167,11 @@
                     $_SESSION['name']     = (string)$user->name;
                     $_SESSION['logged_in']    = (bool)true;
 
-                    $nurse['posts'] = $this->nurse_model->get_username($user_id);
+                    //$nurse['posts'] = $this->nurse_model->get_username($user_id);
                     // user login ok
                     $this->load->view('header');
 
-                    $this->load->view('Nurse/panel/panel', $nurse);
+                    $this->load->view('Nurse/panel/panel', $data);
                     $this->load->view('footer');
 
                 } else {

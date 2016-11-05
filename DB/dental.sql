@@ -225,3 +225,64 @@ ALTER TABLE `patient`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nurse`
+--
+
+CREATE TABLE IF NOT EXISTS `nurse` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `regdatetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `nurse`
+--
+
+INSERT INTO `nurse` (`id`, `name`, `email`, `password`, `regdatetime`) VALUES
+(1, 'yasanthy', 'yashanthy93@gmail.com', '25f9e794323b453885f5181f1b624d0b', '2016-10-16 03:58:55');
+
+-- --------------------------------------------------------
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cisession`
+--
+
+CREATE TABLE IF NOT EXISTS `cisession` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `type` varchar(6) DEFAULT NULL,
+  `ip_address` varchar(45) NOT NULL,
+  `last_activity` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `logged_in` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cisession`
+--
+
+INSERT INTO `cisession` (`id`, `name`, `email`, `type`, `ip_address`, `last_activity`, `logged_in`) VALUES
+(9, 'bingo', 'alla_6789@gmail.com', 'nurse', '::1', '2016-10-09 23:47:51', 1),
+(12, 'alliam', 'alla_6789@gmail.com', 'nurse', '::1', '2016-10-09 23:59:01', 1),
+(2, 'boooooooo', 'boooo@yahoo.com', 'nurse', '::1', '2016-10-10 00:51:23', 1),
+(2, 'boooooooo', 'boooo@yahoo.com', 'nurse', '::1', '2016-10-10 00:56:09', 1),
+(2, 'boooooooo', 'boooo@yahoo.com', 'nurse', '::1', '2016-10-10 00:57:16', 1),
+(2, 'boooooooo', 'boooo@yahoo.com', 'nurse', '::1', '2016-10-10 00:59:52', 1),
+(2, 'boooooooo', 'boooo@yahoo.com', 'nurse', '::1', '2016-10-10 01:00:36', 1),
+(2, 'boooooooo', 'boooo@yahoo.com', 'nurse', '::1', '2016-10-10 01:01:34', 1),
+(2, 'boooooooo', 'boooo@yahoo.com', 'nurse', '::1', '2016-10-10 01:01:55', 1),
+(3, 'alliam', 'alla_6789@gmail.com', 'nurse', '::1', '2016-10-10 01:02:57', 1),
+(4, 'mayuran34', 'uuu@gmail.com', 'nurse', '::1', '2016-10-10 03:27:48', 1),
+(1, 'yasanthy', 'yashanthy93@gmail.com', 'nurse', '::1', '2016-10-15 20:59:09', 1);
+
+-- --------------------------------------------------------

@@ -28,10 +28,15 @@
                         <h4>User section</h4>
 
                         <ul>
-                            <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>
-                            </li>
-                            <li><a href="<?php echo base_url('assest/'); ?>register.html">Regiter</a>
-                            </li>
+                            <?php if (isset($_SESSION['name']) && $_SESSION['logged_in'] === true) : ?>
+
+                            <?php else : ?>
+                                <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>
+                                </li>
+                                <li><a href="<?php echo base_url('assest/'); ?>register.html">Regiter</a>
+                                </li>
+                            <?php endif; ?>
+
                         </ul>
 
                         <hr class="hidden-md hidden-lg hidden-sm">

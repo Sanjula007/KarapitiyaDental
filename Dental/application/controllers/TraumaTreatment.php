@@ -598,5 +598,8 @@ class TraumaTreatment extends CI_Controller {
 		return true;
 	
 	}
-	
+	public function test(){
+		$this->load->view('Header');
+		$this->load->view('Footer');
+	}
 }
