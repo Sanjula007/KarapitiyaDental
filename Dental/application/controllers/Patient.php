@@ -165,7 +165,10 @@ class Patient extends CI_Controller {
 		$this->load->view('Patient/Tableview');
 		//$this->load->view('Footer');
 	}
-
+	public function view(){
+		$this->load()->view('Header');
+		$this->load()->view('Footer');
+	}
 
 	
 	

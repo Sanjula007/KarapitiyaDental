@@ -31,11 +31,10 @@
 
     <!-- your stylesheet with modifications -->
     <link href="<?php echo base_url('assest/'); ?>css/custom.css" rel="stylesheet">
-
     <script src="<?php echo base_url('assest/'); ?>js/respond.min.js"></script>
-
     <link rel="shortcut icon" href="<?php echo base_url('assest/'); ?>favicon.png">
-	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assest/'); ?>bower_components/sweetalert2/dist/sweetalert2.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assest/');?>bower_components/angular-xeditable/dist/css/xeditable.min.css">
 	
     <script src="<?php echo base_url('assest/'); ?>js/jquery-1.11.0.min.js"></script>
     <script src="<?php echo base_url('assest/'); ?>js/bootstrap.min.js"></script>
@@ -45,7 +44,19 @@
     <script src="<?php echo base_url('assest/'); ?>js/bootstrap-hover-dropdown.js"></script>
     <script src="<?php echo base_url('assest/'); ?>js/owl.carousel.min.js"></script>
     <script src="<?php echo base_url('assest/'); ?>js/front.js"></script>
+	<script src="<?php echo base_url('assest/'); ?>bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
 
+	<!-- Angular -->
+	<script src="<?php echo base_url('assest/'); ?>bower_components/angular/angular.min.js"></script>
+	<script src="<?php echo base_url('assest/'); ?>bower_components/angular-messages/angular-messages.min.js"></script>
+	<script src="<?php echo base_url('assest/'); ?>bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="<?php echo base_url('assest/'); ?>bower_components/angular-animate/angular-animate.js"></script>
+	<script src="<?php echo base_url('assest/'); ?>bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="<?php echo base_url('assest/'); ?>bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>
+	<!-- app -->
+	<script src="<?php echo base_url('assest/'); ?>js/restorativeApp.js"></script>
+	<!-- controller -->
+	<script src="<?php echo base_url('assest/'); ?>js/controllers/restorativeController.js"></script>
 
 
 
