@@ -1,6 +1,5 @@
 <div class="panel panel-default sidebar-menu">
-<div class="container">
-<div class="tg-wrap">
+<div class="box">
 
 <script type ="text/javascript">
 
@@ -57,21 +56,20 @@ public function delete(){
 
 <h1><u> Edit Periodical Examination Chart</u> </h1>
 
-<table width="600" height="400" >
+<table width="400" height="400" >
 
 <tr>
 <td>
 
 
-</tr>
-
+</tr>1
 
 <?php foreach ($pd as $row ) {  ?>
     <form name ="userinput"  action="<?php echo base_url(); ?>index.php/patient/saveNewExaminationChart/<?php echo $row->id; ?>" method="post"> 
 <tr>
 <td>Select Tooth</td>
 
-<td><select id="toothSelect" name ="form_tooth" onchange="ReloadImage()" >
+<td><select id="toothSelect" name ="form_tooth" onchange="ReloadImage()" class="form-control">
     <option  value="<?php echo $row->tooth; ?>" selected='selected'><?php echo $row->tooth; ?>  </option>
     <option  value="canine">Canine</option>x
     <option  value="incisor">Incisor</option>
@@ -85,7 +83,7 @@ public function delete(){
 
 <tr>
 <td>Select Position</td> 
-<td><select name="form_jaw">
+<td><select name="form_jaw" class="form-control">
     <option value="upper">Upper</option>
     <option value="lower">Lower</option>
 </select></td></tr>
@@ -93,11 +91,11 @@ public function delete(){
 
 
 
-<tr><td>Vitality :</td> <td><select name="form_vitality"><option value="positive">Positive</option><option value="negative">Negative </option></select></td></tr>
-<tr><td>Recesson :</td> <td><input value ="<?php echo $row->recesson; ?>" type="=text" name="form_recesson" ></t></td></tr>
-<tr><td>Fucation :</td> <td><input value ="<?php echo $row->fucation; ?>" type ="text" name="form_fucation"></td><td><img id="toothImage" src="" style="position:absolute; "></td></td></tr>
-<tr><td>Mobility :</td> <td><input value ="<?php echo $row->mobility; ?>" type="=text" name="form_mobility"></td></tr>
-<tr><td>Pocket Depth:</td><td><input value="<?php echo $row->pocketDepth;?>" type ="text" name="form_pocketDepth"></td></tr>
+<tr><td>Vitality :</td> <td><select class="form-control" name="form_vitality"><option value="positive">Positive</option><option value="negative" class="form-control">Negative </option></select></td></tr>
+<tr><td>Recesson :</td> <td><input class="form-control" value ="<?php echo $row->recesson; ?>" type="=text" name="form_recesson" ></t></td></tr>
+<tr><td>Fucation :</td> <td><input class="form-control" value ="<?php echo $row->fucation; ?>" type ="text" name="form_fucation"></td><td><img id="toothImage" src="" style="position:absolute; "></td></td></tr>
+<tr><td>Mobility :</td> <td><input class="form-control" value ="<?php echo $row->mobility; ?>" type="=text" name="form_mobility"></td></tr>
+<tr><td>Pocket Depth:</td><td><input class="form-control" value="<?php echo $row->pocketDepth;?>" type ="text" name="form_pocketDepth"></td></tr>
 </table>
 </p>
 <?php }  ?>

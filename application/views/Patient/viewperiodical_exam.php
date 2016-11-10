@@ -13,16 +13,12 @@
 <script type="text/javascript">
 
 function test(){
-
-
 	var sel = document.getElementById('selectPatient');
    	var sv = sel.options[sel.selectedIndex].value;
 	
 
 	location.href = "<?php echo base_url();?>index.php/patient/viewperiodical_exam/"+sv;
  	document.getElementById("selectPatient").selectedIndex = sv;
-
-
 }
 
 </script>

@@ -3,7 +3,7 @@
 
 <center>
 <h2>Treatment Plan </h2>
-<form name="treatmentPlan">
+<form name="treatmentPlan" onsubmit="<?php echo base_url(); ?>index.php/patient/save_treatmentPlan" method="post">
 <table>
 <tr>
 <td>Date of treatment : </td>

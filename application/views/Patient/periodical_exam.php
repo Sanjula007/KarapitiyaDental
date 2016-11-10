@@ -49,13 +49,12 @@ function test(){
 
 <h1><u>Periodical Examination Chart</u> </h1>
 
-<table width="600" height="400" >
+<table width="400" height="400" >
 
 <tr>
-<td>
-Select Patient</td>
+<td>Select Patient</td>
 
-<td><select id="form_patients" name="form_patients">
+<td><select id="form_patients" name="form_patients" class="form-control">
 <?php foreach ($p as $row){ ?>
 <option value="<?php echo $row->id;?>"><?php echo $row->fname; echo " "; echo $row->lname; ?></option>
 <?php } ?>
@@ -66,7 +65,7 @@ Select Patient</td>
 <tr>
 <td>Select Tooth</td>
 
-<td><select id="toothSelect" name ="form_tooth" onchange="ReloadImage()">
+<td><select id="toothSelect" name ="form_tooth" onchange="ReloadImage()" class="form-control">
     <option  value="canine">Canine</option>
     <option  value="incisor">Incisor</option>
     <option  value="premolar">Pre Molar</option>
@@ -75,19 +74,17 @@ Select Patient</td>
 </select></td></tr>
 <tr>
 <td>Select Position</td> 
-<td><select name="form_jaw">
+<td><select name="form_jaw"  class="form-control">
     <option value="upper">Upper</option>
     <option value="lower">Lower</option>
 </select></td>
 
 
-
-
-<tr><td>Vitality :</td> <td><select name="form_vitality"><option value="positive">Positive</option><option value="negative">Negative </option></select></td></tr>
-<tr><td>Recesson :</td> <td><input type="=text" name="form_recesson" ></t></td></tr>
-<tr><td>Fucation :</td> <td><input type ="text" name="form_fucation"></td><td><img id="toothImage" src="" style="position:absolute; "></td></tr>
-<tr><td>Mobility :</td> <td><input type="=text" name="form_mobility"></td></tr>
-<tr><td>Pocket Depth:</td> <td><input type ="text" name="form_pocketDepth"></td></tr>
+<tr><td>Vitality :</td> <td><select class="form-control" name="form_vitality"><option value="positive">Positive</option><option value="negative">Negative </option></select></td></tr>
+<tr><td>Recesson :</td> <td><input class="form-control" type="=text" name="form_recesson" ></t></td></tr>
+<tr><td>Fucation :</td> <td><input class="form-control" type ="text" name="form_fucation"></td><td><img id="toothImage" src="" style="position:absolute; "></td></tr>
+<tr><td>Mobility :</td> <td><input class="form-control" type="=text" name="form_mobility"></td></tr>
+<tr><td>Pocket Depth:</td> <td><input class="form-control" type ="text" name="form_pocketDepth"></td></tr>
 </table>
 </p>
 <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>Save Details</button>
