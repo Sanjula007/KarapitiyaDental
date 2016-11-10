@@ -211,7 +211,6 @@ class Patient extends CI_Controller {
 			$this->load->view('Footer');
 		
 
-
 	}
 
 
@@ -228,31 +227,57 @@ class Patient extends CI_Controller {
 		$this->load->view('Patient/editPeriodicalExam',$patient);
 		$this->load->view('Footer');
 
-
 	}
 	
 
 	public function treatmentPlan(){
+
+		$this->load->helper('url');
+		$pid = $this->uri->segment(3);
 
 
 		$this->load->view('Header');
 		$this->load->view('Patient/treatmentPlan');
 		$this->load->view('Footer');
 
+		
+	}
+
+
+	public function save_treatmentPlan(){
+
+		$this->load->helper('url');
+		$pid = $this->uri->segment(3);
+
 		$this->load->model('patient_model');
 		$form_data = $this->input->post();
 		 $data = array(
-
+		 'pid'=>$pid,
 		 'treatmentDate'=>$this->input->post('form_treatmentDate'),
 		 'nxtTreatmentDate'=>$this->input->post('form_nxtTreatmentDate'),
-		 'note'=>=>$this->input->post('form_note')
+		 'note'=>$this->input->post('form_note')
 		 );
 
-		 $this->patient_model->save_treatmentPlan($data,$pid);
+		 $this->patient_model->save_treatmentPlan($data);
 
-		
 	}
-	
+
+
+	public function followUpView(){
+
+		$this->load->view('Header');
+		$this->load->view('Patient/followUp');
+		$this->load->view('Footer');
+
+	}
+
+	public function followUpAdd(){
+		$this->load->view('Header');
+		$this->load->view('Patient/followUpForm');
+		$this->load->view('Footer');
+
+	}
+
 	public function ajaxPatientDetails(){
 		
 		$this->load->model('patient_model');
