@@ -23,7 +23,10 @@
                                     <a href="<?= base_url('index.php/TraumaTreatment/trauma_profile/1'); ?>"><i class="fa fa-list"></i>Trauma Profile</a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('index.php/'); ?>"><i class="fa fa-list"></i>Stock</a>
+                                    <a href="<?= base_url('index.php/Stock/Equipment/'); ?>"><i class="fa fa-list"></i>Stock</a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('index.php/Stock/Equipment/new_item'); ?>"><i class="fa fa-list"></i>new item Stock</a>
                                 </li>
                                 <li>
                                     <a href="<?= base_url('index.php/'); ?>"><i class="fa fa-user"></i> My account</a>
