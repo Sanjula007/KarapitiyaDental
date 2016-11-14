@@ -11,7 +11,7 @@
 						</ul>
 
 					</div>
-					<?php $this->load->view('SideBar'); ?>
+				<?php $this->load->view('SideBar'); ?>
                 <div class="col-md-9">
                     <div class="box">
                         <h1>New Item</h1>
