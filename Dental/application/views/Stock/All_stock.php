@@ -12,8 +12,7 @@
 	<style type="text/css" class="init">
 	
 	</style>
-	<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-	</script>
+	
 	<script type="text/javascript" language="javascript" src="<?= base_url(); ?>/media/js/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js">
 	</script>
