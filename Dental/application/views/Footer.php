@@ -5,6 +5,7 @@
 
         <!-- *** FOOTER ***
  _________________________________________________________ -->
+ <!-- 
         <div id="footer" >
             <div class="container">
                 <div class="row">
@@ -28,21 +29,16 @@
                         <h4>User section</h4>
 
                         <ul>
-                            <?php if (isset($_SESSION['name']) && $_SESSION['logged_in'] === true) : ?>
-
-                            <?php else : ?>
-                                <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>
-                                </li>
-                                <li><a href="<?php echo base_url('assest/'); ?>register.html">Regiter</a>
-                                </li>
-                            <?php endif; ?>
-
+                            <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>
+                            </li>
+                            <li><a href="<?php echo base_url('assest/'); ?>register.html">Regiter</a>
+                            </li>
                         </ul>
 
                         <hr class="hidden-md hidden-lg hidden-sm">
 
                     </div>
-                    <!-- /.col-md-3 -->
+                     -->
 
 
 
@@ -69,14 +65,10 @@
         <div id="copyright">
             <div class="container">
                 <div class="col-md-6">
-                    <p class="pull-left">© 2015 Your name goes here.</p>
+                    <p class="pull-left">© karapitiya Dental Hostpital.</p>
 
                 </div>
-                <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="<?php echo base_url('assest/'); ?>http://bootstrapious.com/e-commerce-templates">Bootstrapious</a> with support from <a href="<?php echo base_url('assest/'); ?>https://kakusei.cz">Kakusei</a> 
-                        <!-- Not removing these links is part of the licence conditions of the template. Thanks for understanding :) -->
-                    </p>
-                </div>
+
             </div>
         </div>
         <!-- *** COPYRIGHT END *** -->
@@ -84,22 +76,6 @@
 
 
     </div>
-    <!-- /#all -->
-
-
-    
-
-    <!-- *** SCRIPTS TO INCLUDE ***
- _________________________________________________________ -->
-    <script src="<?php echo base_url('assest/'); ?>js/jquery-1.11.0.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/jquery.cookie.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/waypoints.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/modernizr.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/bootstrap-hover-dropdown.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/front.js"></script>
-
 
 </body>
 

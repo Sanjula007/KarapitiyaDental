@@ -31,10 +31,11 @@
 
     <!-- your stylesheet with modifications -->
     <link href="<?php echo base_url('assest/'); ?>css/custom.css" rel="stylesheet">
+
     <script src="<?php echo base_url('assest/'); ?>js/respond.min.js"></script>
+
     <link rel="shortcut icon" href="<?php echo base_url('assest/'); ?>favicon.png">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assest/'); ?>bower_components/sweetalert2/dist/sweetalert2.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assest/');?>bower_components/angular-xeditable/dist/css/xeditable.min.css">
+	
 	
     <script src="<?php echo base_url('assest/'); ?>js/jquery-1.11.0.min.js"></script>
     <script src="<?php echo base_url('assest/'); ?>js/bootstrap.min.js"></script>
@@ -44,19 +45,7 @@
     <script src="<?php echo base_url('assest/'); ?>js/bootstrap-hover-dropdown.js"></script>
     <script src="<?php echo base_url('assest/'); ?>js/owl.carousel.min.js"></script>
     <script src="<?php echo base_url('assest/'); ?>js/front.js"></script>
-	<script src="<?php echo base_url('assest/'); ?>bower_components/sweetalert2/dist/sweetalert2.min.js"></script>
 
-	<!-- Angular -->
-	<script src="<?php echo base_url('assest/'); ?>bower_components/angular/angular.min.js"></script>
-	<script src="<?php echo base_url('assest/'); ?>bower_components/angular-messages/angular-messages.min.js"></script>
-	<script src="<?php echo base_url('assest/'); ?>bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-	<script src="<?php echo base_url('assest/'); ?>bower_components/angular-animate/angular-animate.js"></script>
-	<script src="<?php echo base_url('assest/'); ?>bower_components/angular-sanitize/angular-sanitize.js"></script>
-	<script src="<?php echo base_url('assest/'); ?>bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>
-	<!-- app -->
-	<script src="<?php echo base_url('assest/'); ?>js/restorativeApp.js"></script>
-	<!-- controller -->
-	<script src="<?php echo base_url('assest/'); ?>js/controllers/restorativeController.js"></script>
 
 
 
@@ -73,27 +62,14 @@
             </div>
             <div class="col-md-10" >
                 <ul class="menu">
-<<<<<<< HEAD
-                    <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
                     <li><a href="<?php echo base_url('assest/'); ?>register.html">Register</a>
                     </li>
-                    <!--<li><a href="<?php echo base_url('assest/'); ?>contact.html">Contact</a>
-=======
-                    <?php if (isset($_SESSION['name']) && $_SESSION['logged_in'] === true) : ?>
-
-                        <li><a href="<?= base_url('Nurse/logout') ?>">Logout</a></li>
-                    <?php else : ?>
-                        <li><a href="<?php echo base_url('assest/'); ?>#" data-toggle="modal" data-target="#login-modal">Login</a>
-                        </li>
-                        <li><a href="<?php echo base_url('index.php/Nurse')?>">Register</a>
-                        </li>
-                    <?php endif; ?>
                     <li><a href="<?php echo base_url('assest/'); ?>contact.html">Contact</a>
->>>>>>> origin/master
                     </li>
                     <li><a href="<?php echo base_url('assest/'); ?>#">Recently viewed</a>
-                    </li>-->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -103,10 +79,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">login</h4>
+                        <h4 class="modal-title" id="Login">Customer login</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="<?php echo base_url('index.php/Nurse/login')?>" method="post">
+                        <form action="customer-orders.html" method="post">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="email-modal" placeholder="email">
                             </div>
@@ -135,7 +111,7 @@
     <!-- *** NAVBAR ***
  _________________________________________________________ -->
 
-    <div class="navbar navbar-Best Prices yamm" role="navigation" id="top">
+    <div class="navbar navbar-Best Prices yamm" role="navigation" style="background-color: #c4c4c4;" id="navbar">
         <div class="container">
             <div class="navbar-header">
 				<!--
@@ -153,55 +129,55 @@
             </div>
             <!--/.navbar-header -->
 
-            <div class="navbar-collapse collapse" id="navigation" style="">
+            <div class="navbar-collapse collapse"  id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
                     <li class="active"><a href="<?php echo base_url('assest/'); ?>index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="<?php echo base_url('assest/'); ?>#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Treatments <b class="caret"></b></a>
+                        <a href="<?php echo base_url('assest/'); ?>#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Patient <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
                                     <div class="row">
                                         
                                         <div class="col-sm-3">
-                                            <h5>Accessories</h5>
+                                            <h5>Patient</h5>
                                             <ul>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Trainers</a>
+                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Register</a>
                                                 </li>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Sandals</a>
-                                                </li>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Hiking shoes</a>
-                                                </li>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Casual</a>
-                                                </li>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Hiking shoes</a>
-                                                </li>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Casual</a>
+                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">View Patient Details</a>
                                                 </li>
                                             </ul>
                                         </div>
+
+                                    </div>
+                                </div>
+                                <!-- /.yamm-content -->
+                            </li>
+                        </ul>
+                    </li> 
+                    <li class="dropdown yamm-fw">
+                        <a href="<?php echo base_url('assest/'); ?>#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Treatment <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        
                                         <div class="col-sm-3">
-                                            <h5>Featured</h5>
+                                            <h5>Forms</h5>
                                             <ul>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Trainers</a>
+                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Form 1</a>
                                                 </li>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Sandals</a>
+                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Forms 2</a>
                                                 </li>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Hiking shoes</a>
+                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Forms 3</a>
                                                 </li>
-                                            </ul>
-                                            <h5>Looks and trends</h5>
-                                            <ul>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Trainers</a>
-                                                </li>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Sandals</a>
-                                                </li>
-                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Hiking shoes</a>
+                                                <li><a href="<?php echo base_url('assest/'); ?>category.html">Forms 4</a>
                                                 </li>
                                             </ul>
                                         </div>
+
                                     </div>
                                 </div>
                                 <!-- /.yamm-content -->
@@ -215,39 +191,7 @@
                 </ul>
 
             </div>
-            <!--/.nav-collapse -->
 
-            <div class="navbar-buttons">
-
-                <div class="navbar-collapse collapse right" id="basket-overview">
-                    <!--<a href="<?php echo base_url('assest/'); ?>basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">none</span></a>-->
-                </div>
-                <!--/.nav-collapse -->
-
-                <div class="navbar-collapse collapse right" id="search-not-mobile">
-                    <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
-                        <span class="sr-only">Toggle search</span>
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-
-            </div>
-
-            <div class="collapse clearfix" id="search">
-
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <span class="input-group-btn">
-
-			<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-
-		    </span>
-                    </div>
-                </form>
-
-            </div>
-            <!--/.nav-collapse -->
 
         </div>
         <!-- /.container -->

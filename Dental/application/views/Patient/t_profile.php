@@ -5,7 +5,7 @@
     var str='<?php echo $trauma_examination[0]->teeth; ?>';
     var tooth=str.split(',');
     for(i=0; i<tooth.length; i++){
-        document.getElementById('btn'+tooth[i]).className = "btn btn-danger  col-sm-1";
+        document.getElementById('btn'+tooth[i]).className = "btn btn-danger  col-sm-2";
         teeth.push(tooth[i]);
         document.getElementById('divteeth').style.display='block';
     }
@@ -15,7 +15,7 @@
             for($j=1;$j<6;$j++){
                 $str='t'.$i.$j;
                 if($trauma_teeth_details[0]->$str!=0){
-                echo  "document.getElementById('btn".$str."').className = 'btn btn-danger  col-sm-1';";
+                echo  "document.getElementById('btn".$str."').className = 'btn btn-danger  col-sm-2';";
                 echo  "document.getElementById('btn".$str."').innerHTML = '".$i.$j."(".$trauma_teeth_details[0]->$str.")"."';";
             }
                    // $trauma_teeth_details[0]->$str;
@@ -27,7 +27,10 @@
 
 });
 
+ function viewimage(){
 
+     $('#xrayimagemodel').modal('show');
+ }
 
 
 
@@ -46,15 +49,15 @@
 						</ul>
 
 					</div>
-					
-                <div class="col-md-12">
+				<?php $this->load->view('SideBar'); ?>	
+                <div class="col-md-9">
                     <div class="box">
                         <h1>Patient </h1>
                         <hr>
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="box" style="min-height: 280px ">
                         <h4>Presonal Details</h4>
                         <table>
@@ -98,7 +101,7 @@
                     </div>
                 </div>	
 
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <div class="box"  style="min-height: 280px ">
                         <h4>Medical Details</h4>
                         <table>
@@ -127,7 +130,7 @@
                     </div>
                 </div>  	
 
-                <div class="col-md-12">
+                <div class="col-md-offset-3 col-md-9">
                     <div class="box"  style="min-height: 500px ">
                     
                     <div class="col-md-4">
@@ -161,25 +164,25 @@
 
                    </div> 
 
-                    <div class="col-md-5">
+                    <div class=" col-md-5">
                     <h4>Avulsed teeth Details</h4>
                     <?php foreach($trauma_examination as $row){?>
                     <div class="row" id='divteeth' style='display: block;'>
                              Avulsed Teeth<br/>
                                 <div>
-                                <button  class="btn btn-success" id='btn13' onclick='getteeth(this.id); return false;'>13</button>
-                                <button  class="btn btn-success" id='btn12' onclick='getteeth(this.id); return false;'>12</button>
-                                <button  class="btn btn-success" id='btn11' onclick='getteeth(this.id); return false;'>11</button>
-                                <button  class="btn btn-success" id='btn21' onclick='getteeth(this.id); return false;' >21</button>
-                                <button  class="btn btn-success" id='btn22' onclick='getteeth(this.id); return false;'>22</button>
-                                <button  class="btn btn-success" id='btn23' onclick='getteeth(this.id); return false;' >23</button>
+                                <button  class="btn btn-success col-sm-2" id='btn13' >13</button>
+                                <button  class="btn btn-success col-sm-2" id='btn12' >12</button>
+                                <button  class="btn btn-success col-sm-2" id='btn11' >11</button>
+                                <button  class="btn btn-success col-sm-2" id='btn21' >21</button>
+                                <button  class="btn btn-success col-sm-2" id='btn22' >22</button>
+                                <button  class="btn btn-success col-sm-2" id='btn23' >23</button>
                                 <br/>
-                                <button  class="btn btn-success" id='btn43' onclick='getteeth(this.id); return false;'>43</button>
-                                <button  class="btn btn-success" id='btn42' onclick='getteeth(this.id); return false;'>42</button>
-                                <button  class="btn btn-success" id='btn41' onclick='getteeth(this.id); return false;'>41</button>
-                                <button  class="btn btn-success" id='btn31' onclick='getteeth(this.id); return false;'>31</button>
-                                <button  class="btn btn-success" id='btn32' onclick='getteeth(this.id); return false;'>32</button>
-                                <button  class="btn btn-success" id='btn33' onclick='getteeth(this.id); return false;'>33</button>
+                                <button  class="btn btn-success col-sm-2" id='btn43' >43</button>
+                                <button  class="btn btn-success col-sm-2" id='btn42' >42</button>
+                                <button  class="btn btn-success col-sm-2" id='btn41' >41</button>
+                                <button  class="btn btn-success col-sm-2" id='btn31' >31</button>
+                                <button  class="btn btn-success col-sm-2" id='btn32' >32</button>
+                                <button  class="btn btn-success col-sm-2" id='btn33' >33</button>
                                 <input type="hidden" name="teeth"  value='<?php echo set_value('teeth'); ?>' id='teeth'>
                                 </div>
                             </div>
@@ -224,18 +227,16 @@
                     </table> 
                     </div>
                     <div class="col-md-3">
-                    <img src="<?php echo base_url('uploads/patientimages/'. $row->pic);?>"  style="height:228px;">
+                    <img src="<?php echo base_url('uploads/patientimages/'. $row->pic);?>" style="height:228px;">
                     <p><?php echo $row->imgdescription;?></p>
-                            
-                         <?php } ?>
-
                          
                     </div>
                     <!--<button class='btn btn-primary pull-right'>Update</button>-->
+                    <?php } ?>
                     </div>
                 </div>  
 			
-                <div class="col-md-12">
+                <div class="col-md-offset-3 col-md-9">
                     <div class="box"  style="min-height: 300px ">
                         <h4>X-ray Details</h4>
                         
@@ -263,7 +264,7 @@
                             </table>  
                         </div>
                         <div class="col-md-4">  
-                            <img src="<?php echo base_url('uploads/patientimages/'. $row->xrayiamge);?>"  style="height:228px;">
+                            <img src="<?php echo base_url('uploads/patientimages/'. $row->xrayiamge);?>" onclick='viewimage()'   style="height:228px;">
                         </div>
 
                             <?php } ?>
@@ -273,7 +274,7 @@
                     </div>
                 </div> 
 
-                <div class ='col-md-12'>
+                <div class ='col-md-offset-3 col-md-9'>
                     <div class='box'>
                         <div class="row" id='divteeths' >
                                 Teeth<br>
@@ -328,4 +329,26 @@
 
 
 	</div>
+</div>
+
+
+<div id="xrayimagemodel" class="modal fade" role="dialog" style="width: 100%">
+  
+    <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Xray </h4>
+      </div>
+      <div class="modal-body">
+             <img src="<?php echo base_url('uploads/patientimages/'. $trauma_teeth_details[0]->xrayiamge);?>" style='width: 100%' >
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
