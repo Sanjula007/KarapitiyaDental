@@ -41,8 +41,9 @@ class Patient extends CI_Controller {
 	}
 	/*
 		*validate registration from
-		*
+		* view success page
 	*/
+
 	public function treatment(){
 		
 		$this->load->library('form_validation');
@@ -80,9 +81,13 @@ class Patient extends CI_Controller {
 			$this->load->model('patient_model');
 			$id=$this->patient_model->insert_patient($data);
 			//$showid='P';
-			$id=str_pad($id, 6, '0', STR_PAD_LEFT);
-			echo 'P'.$id;
-			//echo $id;
+			$newid=str_pad($id, 6, '0', STR_PAD_LEFT);
+			$datas['pid']= 'P'.$newid;
+			$this->load->model('patient_model');
+			$datas['patient']=$this->patient_model->getpatientdetails(1);
+			$this->load->view('Header');
+			$this->load->view('Patient/Reged',$datas);
+			$this->load->view('Footer');
 		
 		}
 		
