@@ -11,10 +11,16 @@
 
                             <ul class="nav nav-pills nav-stacked">
                                 <li class="active">
-                                    <a href="<?= base_url('index.php/'); ?>"><i class="fa fa-list"></i>Patient</a>
+                                    <a href="<?= base_url('index.php/Patient/patients'); ?>"><i class="fa fa-list"></i>Patients</a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('index.php/'); ?>"><i class="fa fa-list"></i>Trauma Treatment</a>
+                                    <a href="<?= base_url('index.php/Patient/registration'); ?>"><i class="fa fa-list"></i>New Patient registration</a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('index.php/TraumaTreatment/form'); ?>"><i class="fa fa-list"></i>Trauma Treatment</a>
+                                </li>
+                                 <li>
+                                    <a href="<?= base_url('index.php/TraumaTreatment/trauma_profile/1'); ?>"><i class="fa fa-list"></i>Trauma Profile</a>
                                 </li>
                                 <li>
                                     <a href="<?= base_url('index.php/'); ?>"><i class="fa fa-list"></i>Stock</a>
