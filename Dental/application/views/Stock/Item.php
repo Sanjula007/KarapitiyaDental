@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <meta charset="utf-8">
+     <!--<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
+    </script>   -->
+    <meta charset="utf-8">
+    <script src="<?= base_url();?>/assest/js/jquery.validate.js"></script>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
     <title>Stock</title>
@@ -12,14 +15,13 @@
     <style type="text/css" class="init">
     
     </style>
-    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-    </script>
+    
     <script type="text/javascript" language="javascript" src="<?= base_url(); ?>/media/js/jquery.dataTables.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js">
     </script>
     <script type="text/javascript" src="//cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js">
     </script>
-    <script type="text/javascript" language="javascript" src=".<?= base_url(); ?>media/js/dataTables.bootstrap.js">
+    <script type="text/javascript" language="javascript" src="<?= base_url(); ?>media/js/dataTables.bootstrap.js">
     </script>
     <script type="text/javascript" language="javascript" src="<?= base_url(); ?>resources/syntax/shCore.js">
     </script>
@@ -39,8 +41,8 @@
                         </ul>
 
                     </div>
-                    
-                <div class="col-md-12">
+                 <?php $this->load->view('SideBar'); ?>   
+                <div class="col-md-9">
                     <div class="box">
                         <h1>Equipment</h1>
 
@@ -48,7 +50,7 @@
                         <hr>
 
                         <h3>Equipment details</h3>
-                        <form id ='stock' method=POST action="<?php echo base_url('index.php/Stock/Equipment/update')?>">
+                        <form id ='stockupdate' method=POST action="<?php echo base_url('index.php/Stock/Equipment/update')?>">
                             <div class="row">
                                 <div class="col-sm-8">
                                     <div class="form-group">
@@ -76,9 +78,9 @@
                                     <div class="form-group">
                                         <label for="lastname">Item Name</label>
                                         <input type="text" class="form-control" id="name" name="name" >
-                                        <input type="hidden" class="form-control" id="itemid" name="itemid" ">
+                                        
                                     </div>
-                                </div>
+                                </div><input type="hidden" class="form-control" id="itemid" name="itemid" >
                                 </div><div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
@@ -107,11 +109,11 @@
                         </form>
                         
                             <div class="col-sm-3 text-center">
-                                    <button  class="btn btn-success btn-block"  data-toggle="modal" data-target="#qntmodel" onclick="qntshow('add'); return false;"><i class="fa fa-save"></i> Add Item </button>
+                                    <button  class="btn btn-success btn-block"  data-toggle="modal" data-target="#qntmodel" onclick="qntshow('add'); return false;"><i class="fa fa-save"></i> Increase Quentity </button>
 
                             </div>
                             <div class="col-sm-3 text-center">
-                                    <button  class="btn btn-danger btn-block" data-toggle="modal" data-target="#qntmodel" onclick="qntshow('remove'); return false; "><i class="fa fa-save"></i> Remove Item </button>
+                                    <button  class="btn btn-danger btn-block" data-toggle="modal" data-target="#qntmodel" onclick="qntshow('remove'); return false; "><i class="fa fa-save"></i> Decrease Quentity </button>
 
                             </div>
                         </div>
@@ -147,6 +149,7 @@
         submitform();
         getitemdetails();
         setInterval(loadtable(),3000);
+        $("#stockupdate").validate();
     });
 
 function submitform(){
@@ -168,6 +171,7 @@ function submitform(){
             success: function(response){
                 if(response.success==true){
                     $('#modelmsg').modal('show')  ;  
+
                     $('.form-group').removeClass('has-error').removeClass('has-success');
                     $('.text-danger').remove();
                     me[0].reset();//loadAssignmenttable();
@@ -296,7 +300,7 @@ function submitform(){
         <h4 class="modal-title">Stock </h4>
       </div>
       <div class="modal-body">
-            <form id ='stock' method=POST action="<?php echo base_url('index.php/Stock/Equipment/updatequentity')?>">
+            <form id ='stockupdate' method=POST action="<?php echo base_url('index.php/Stock/Equipment/updatequentity')?>">
                 <div >
                     <div class="form-group">
                         <label for="number">Quentity</label>
