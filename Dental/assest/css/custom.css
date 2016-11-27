@@ -1,1 +1,118 @@
 /** Your theme modifications here **/
+.onoffswitch {
+    position: relative;
+     width: 84px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 23px; padding: 0; line-height: 23px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "YES";
+    padding-left: 10px;
+    background-color: #4fbfa8; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "NO";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 2.5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 57px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+
+/* List styling */
+.featureList, .featureList ul {
+  margin-top: 0;
+  padding-left: 2em;
+  list-style-type: none;
+}
+.featureList li {
+  position: absolute;
+  margin-right: 0.5em;
+  font-weight: bold;
+}
+.featureList li.tick {
+  content: "\2713";
+  color: darkgreen;
+}
+.featureList li.cross {
+  content: "\2717";
+  color: crimson;
+}
+.featureList h4.tick {
+    display: block;
+  content: "\2713";
+  color: darkgreen;
+  font-weight: bold;
+  margin-left: 0.5em;
+  height : 35px;
+  vertical-align : bottom;
+  width: 35px;
+  padding-left: 2em;
+}
+.featureList h4.cross {
+    display: inline-block;
+  content: "\2717";
+  color: crimson;
+  font-weight: bold;
+  margin-left: 0.5em;
+  height : 25px;
+  vertical-align : bottom;
+  width: 26px;
+  padding-left: 2em;
+}
+
+h4.tick {
+  content: "\2713";
+  color: darkgreen;
+  display : inline-block;
+/*  font-weight: bold;
+  margin-left: 0.5em;
+  display : inline-block;
+  height : 30px;
+  vertical-align : bottom;
+  width: 26px;
+  padding-left: 2em;
+  margin-top: 0;
+  background-position: -26px -329px;*/
+}
+h4.cross{
+  content: "\2717";
+  color: crimson;
+  display : inline-block;
+/*  font-weight: bold;
+  margin-left: 0.5em;
+  display : inline-block;
+  height :30px;
+  vertical-align : bottom;
+  width: 26px;
+  padding-left: 2em;
+  margin-top: 0;
+  background-position: -26px -329px;*/
+}
