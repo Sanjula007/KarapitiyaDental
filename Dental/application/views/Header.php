@@ -30,21 +30,30 @@
     <link href="<?php echo base_url('assest/'); ?>css/style.default.css" rel="stylesheet" id="theme-stylesheet">
 
     <!-- your stylesheet with modifications -->
-    <link href="<?php echo base_url('assest/'); ?>css/custom.css" rel="stylesheet">
+    <link href="<?php echo base_url('assest/css/custom.css'); ?>" rel="stylesheet">
 
-    <script src="<?php echo base_url('assest/'); ?>js/respond.min.js"></script>
+    <script src="<?php echo base_url('assest/js/respond.min.js'); ?>"></script>
 
     <link rel="shortcut icon" href="<?php echo base_url('assest/'); ?>favicon.png">
 	
 	
-    <script src="<?php echo base_url('assest/'); ?>js/jquery-1.11.0.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/jquery.cookie.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/waypoints.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/modernizr.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/bootstrap-hover-dropdown.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/front.js"></script>
+<script src="<?php echo base_url('assest/js/jquery-1.11.0.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assest/js/jquery-1.11.1.js'); ?> "></script>
+    <script src="<?php echo base_url('assest/js/bootstrap.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assest/js/jquery.validate.min.js'); ?> "></script>
+    <script src="<?php echo base_url('assest/js/jquery.validate.js'); ?> "></script>
+<!--    <script src="<?php //echo base_url('assest/js/jquery.form.js'); ?> "></script>-->
+    <script src="<?php echo base_url('assest/js/jquery.cookie.js'); ?>"></script>
+    <script src="<?php echo base_url('assest/js/waypoints.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assest/js/modernizr.js'); ?>"></script>
+    <script src="<?php echo base_url('assest/js/bootstrap-hover-dropdown.js'); ?>"></script>
+    <script src="<?php echo base_url('assest/js/owl.carousel.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assest/js/front.js'); ?>"></script>
+    <script src="<?php echo base_url('assest/js/jquery.flexslider.js'); ?>"></script>
+    <script src="<?php echo base_url('assest/js/jquery.flexslider.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assest/js/main.js'); ?>"></script>
+
+    <script src="<?php echo base_url('assest/editor/ckeditor/ckeditor/ckeditor.js'); ?> "></script>
 
 
 
