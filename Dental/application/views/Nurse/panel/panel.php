@@ -50,7 +50,8 @@
                 <div class="box">
 
 
-                        <h1>Hi  <?php echo $_SESSION['name'];?>!!</h1>
+                    <!--   <h1>Hi  <?php echo $_SESSION['name'];?>!!</h1>-->
+
 
                     <p class="lead">Update your account.</p>
                     <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>

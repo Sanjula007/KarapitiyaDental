@@ -61,8 +61,8 @@
                     <h3>Change password</h3>
 
                     <?= form_open('Settings/resetPassword') ?>
-                    <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $_SESSION['id'];?>" >
-                        <div class="row">
+
+                    <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="password_old">Old password</label>

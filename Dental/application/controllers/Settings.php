@@ -19,6 +19,7 @@
             parent::__construct();
             $this->load->helper(array('url'));
             $this->load->model('nurse_model');
+            $this->load->helper('security');
 
         }
          /**
@@ -80,7 +81,7 @@
 
             $this->load->helper('form');
             $this->load->library('form_validation');
-
+            $this->form_validation->set_rules('oldname', 'oldname', 'trim|required|min_length[4]|callback_isUserNameExist', array('isUserNameExist' => ' Please enter a your old username correctly!.'));
             $this->form_validation->set_rules('name', 'name', 'trim|required|min_length[4]|is_unique[nurse.name]', array('is_unique' => 'This username already exists. Please choose another one.'));
 
             if ($this->form_validation->run() === false) {
@@ -92,8 +93,8 @@
             else{
 
                 $name = $this->input->post('name');
-                $id   = $this->input->post('id');
-                $result = $this->nurse_model->edit_user($id,$name);
+                $oName  = $this->input->post('oldname');
+                $result = $this->nurse_model->edit_user($oName,$name);
 
 
                 if ($result == 1) {
@@ -107,6 +108,19 @@
 
         }
 
+        public function isUserNameExist($oName) {
+
+            $is_exist = $this->nurse_model->isUsernameExist($oName);
+
+            if ($is_exist) {
+               // $this->form_validation->set_message(
+                    //'isUserNameExist', 'Please enter valid username! .'
+                //);
+               return true;
+            } else {
+                return false;
+            }
+        }
         /**
          *
          * change password funtion
@@ -117,6 +131,10 @@
 
         public function resetPassword(){
 
+            session_start();
+            $id = $_SESSION['id'];
+
+            echo $id;
             $data = new stdClass();
 
             $this->load->helper('form');

@@ -137,10 +137,10 @@
          * @param mixed $user_id
          * @return object the user object
          */
-        public function edit_user($id,$name) {
+        public function edit_user($oName,$name) {
 
             $this->db->set('name', $name);
-            $this->db->where('id' ,$id);
+            $this->db->where('name' ,$oName);
             $this->db->update('nurse');
             return true;
 
@@ -162,6 +162,24 @@
 
         }
 
+        /**
+         * resset password function.
+         *
+         * @access public
+         * @param mixed $user_id
+         * @return object the user object
+         */
 
+        public function isUsernameExist($oName) {
+            $this->db->select('id');
+            $this->db->where('name', $oName);
+            $query = $this->db->get('nurse');
+
+            if ($query->num_rows() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 ?>

@@ -53,10 +53,30 @@ _________________________________________________________ -->
                     <p class="text-muted"> </p>
                     <?= form_open('Settings/edit') ?>
 
-                    <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $_SESSION['id'];?>" >
 
-                        <div class="row">
-                            <div class="col-sm-6">
+                    <?php
+                    if(isset($_SESSION['id'])){
+                        echo $_SESSION['id'];
+                    }
+                    ?>
+                     <div class="row">
+                         <div class="col-sm-6">
+                             <div class="form-group">
+                                 <label for="name">Old username</label>
+                                 <?php if (isset($error)) : ?>
+                                     <div class="col-md-12">
+                                         <div class="alert alert-danger" role="alert">
+                                             <?= $error ?>
+                                         </div>
+                                     </div>
+                                 <?php endif; ?>
+                                 <input type="text" class="form-control" id="oldname" name="oldname">
+                                 <label > <span style="color:#d9534f;"><?php echo form_error('oldname'); ?></span></label>
+                             </div>
+                         </div>
+                         </div>
+                    <div class="row">
+                         <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="firstname">New username</label>
                                     <?php if (isset($error)) : ?>
