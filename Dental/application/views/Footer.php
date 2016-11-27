@@ -86,14 +86,14 @@
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-    <script src="<?php echo base_url('assest/'); ?>js/jquery-1.11.0.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/jquery.cookie.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/waypoints.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/modernizr.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/bootstrap-hover-dropdown.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url('assest/'); ?>js/front.js"></script>
+<!--    <script src="<?php //echo base_url('assest/'); ?>js/jquery-1.11.0.min.js"></script>
+    <script src="<?php //echo base_url('assest/'); ?>js/bootstrap.min.js"></script>
+    <script src="<?php //echo base_url('assest/'); ?>js/jquery.cookie.js"></script>
+    <script src="<?php //echo base_url('assest/'); ?>js/waypoints.min.js"></script>
+    <script src="<?php// echo base_url('assest/'); ?>js/modernizr.js"></script>
+    <script src="<?php //echo base_url('assest/'); ?>js/bootstrap-hover-dropdown.js"></script>
+    <script src="<?php //echo base_url('assest/'); ?>js/owl.carousel.min.js"></script>-->
+<!--    <script src="<?php //echo base_url('assest/'); ?>js/front.js"></script>-->
 
 
 </body>
