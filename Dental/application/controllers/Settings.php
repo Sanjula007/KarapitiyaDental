@@ -19,6 +19,7 @@
             parent::__construct();
             $this->load->helper(array('url'));
             $this->load->model('nurse_model');
+            $this->load->library('session');
             $this->load->helper('security');
 
         }
@@ -131,18 +132,15 @@
 
         public function resetPassword(){
 
-            session_start();
-            $id = $_SESSION['id'];
-
-            echo $id;
-            $data = new stdClass();
+               $data = new stdClass();
 
             $this->load->helper('form');
             $this->load->library('form_validation');
 
-            $this->form_validation->set_rules('password_old', 'old password', 'trim|required|min_length[6]');
+            $this->form_validation->set_rules('password_old', 'old password', 'trim|required|min_length[6] |callback_isOldPassExist', array('isOldPassExist' => ' Please enter a your old password correctly!.'));
             $this->form_validation->set_rules('password', 'new password', 'trim|required|min_length[6]');
             $this->form_validation->set_rules('password_confirm', 'confirm Password', 'trim|required|min_length[6]|matches[password]');
+
 
             if ($this->form_validation->run() === false) {
 
@@ -153,7 +151,7 @@
             else{
 
                 $password = md5($this->input->post('password'));
-                $id = $this->input->post('id');
+                $id = $this->session->id;
                 //echo $password.$id;
 
                 $result = $this->nurse_model->reset_password($id,$password);
@@ -165,6 +163,22 @@
                     $this->load->view('Nurse/panel/resetpassword');
                     $this->load->view('footer');
                 }
+            }
+        }
+
+        public function isOldPassExist() {
+            $oldPPass = md5($this->input->post('password_old'));
+            $id = $this->session->id;
+
+            $is_exist = $this->nurse_model->isOldpassExist($oldPPass, $id);
+
+            if ($is_exist) {
+                // $this->form_validation->set_message(
+                //'isUserNameExist', 'Please enter valid username! .'
+                //);
+                return true;
+            } else {
+                return false;
             }
         }
     }

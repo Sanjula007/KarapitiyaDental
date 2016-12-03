@@ -243,5 +243,15 @@
 
         }
 
+        public function cccc() {
+
+            $this->load->model('Leave_model');
+            $leaves['rows']= $this->Leave_model->get_all();
+            $this->load->view('header');
+            $this->load->view('Nurse/doctors_leave',$leaves);
+            $this->load->view('footer');
+        }
+
+
     }
 ?>

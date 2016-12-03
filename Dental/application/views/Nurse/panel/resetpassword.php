@@ -50,7 +50,7 @@
                 <div class="box">
                     <h1>My account</h1>
                     <p class="lead">Change your password here.</p>
-                    <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    <p class="text-muted">Choose a strong password and don't reuse it for other accounts. </p>
                     <?php if (isset($error)) : ?>
                         <div class="col-md-12">
                             <div class="alert alert-danger" role="alert">

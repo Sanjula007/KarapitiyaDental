@@ -78,5 +78,11 @@ class Leave_model extends CI_Model {
 
     }
 
+    public function get_all(){
+        $query = $this->db->get('leave_management');
+        return $query;
+
+    }
+
 }
 ?>

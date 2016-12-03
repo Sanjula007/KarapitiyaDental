@@ -181,5 +181,26 @@
                 return false;
             }
         }
+
+        /**
+         * resset password function.
+         *
+         * @access public
+         * @param mixed $user_id
+         * @return object the user object
+         */
+
+        public function isOldpassExist($oldPPass,$id) {
+            $this->db->select('id');
+            $this->db->where('password', $oldPPass);
+            $this->db->where('id', $id);
+            $query = $this->db->get('nurse');
+
+            if ($query->num_rows() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 ?>
