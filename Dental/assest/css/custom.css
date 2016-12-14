@@ -1,5 +1,24 @@
-/** Your theme modifications here **/
+/** theme modifications **/
 
+/*teeth graph*/
+
+/*canvas {
+  border: 1px solid;
+}*/
+canvas{
+  border:1px solid;
+}
+/*.ep{
+   border:10px solid;
+}*/
+.test{
+  margin-left: 4px;
+  display:inline-block;
+  text-align: center;
+}
+.type{
+  vertical-align: center !important;
+}
 /*validation error classes*/
 .has-error {
 	border: 1px solid red;
