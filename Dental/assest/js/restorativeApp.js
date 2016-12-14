@@ -1,1 +1,0 @@
-var app = angular.module('restorativeApp',['ngMessages','ui.bootstrap','ngAnimate','ngSanitize','xeditable']);
