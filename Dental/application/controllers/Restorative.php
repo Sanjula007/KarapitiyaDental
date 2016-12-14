@@ -9,6 +9,14 @@ class Restorative extends CI_Controller {
     	$this->load->view('Footer');
     }
 
+    public function profile($id){
+        $this->load->view('Header');
+        $this->load->model('patient_model');
+        $data['patient']=$this->patient_model->getpatientdetails($id);
+        $this->load->view('Restorative/profile',$data);
+        $this->load->view('Footer');
+    }
+
     public function saveHistory(){
     
     	$data = array(
