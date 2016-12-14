@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
 
@@ -17,7 +15,7 @@
 
     <meta name="keywords" content="">
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'> -->
 
     <!-- styles -->
     <link href="<?php echo base_url('assest/'); ?>css/font-awesome.css" rel="stylesheet">
@@ -45,6 +43,12 @@
     <script src="<?php echo base_url('assest/'); ?>js/bootstrap-hover-dropdown.js"></script>
     <script src="<?php echo base_url('assest/'); ?>js/owl.carousel.min.js"></script>
     <script src="<?php echo base_url('assest/'); ?>js/front.js"></script>
+    
+
+    <!-- live reload plugin (for development perposes only) -->
+    <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script><!DOCTYPE html>
+    <html lang="en"> -->
+
 
 
 
