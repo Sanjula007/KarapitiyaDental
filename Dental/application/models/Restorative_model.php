@@ -48,4 +48,22 @@ class Restorative_model extends CI_Model{
 			return $e->getMessage();
 		}
 	}
+
+	public function getRestorativeDetails($id){
+		$this->load->database();
+		$this->db->from('patient');
+		$this->db->where('id',$id);
+		
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	public function getExaminationDetails($id){
+		$this->load->database();
+		$this->db->from('medical_history');
+		$this->db->where('id',$id);
+
+		$query = $this->db->get();
+		return $query->result();
+	}
 }
