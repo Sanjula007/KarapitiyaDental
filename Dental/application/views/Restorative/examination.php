@@ -11,7 +11,7 @@
 
 		<div class="box">
 			<div class="post">
-				<h3 col-sm-3>Examination</h3><button ng-click="back()" class="btn btn-primary"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back</button><hr>
+				<h3 col-sm-3>Examination</h3><hr />
 				
 					<form name="exmForm" ng-submit="submitForm()" novalidate>	
 						
@@ -205,3 +205,10 @@
 		</div>
 	</div>
 </div>
+<script src="<?php echo base_url('assest/'); ?>js/angular.min.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/angular-sanitize.min.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/angular-animate.min.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/angular-messages.min.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/ui-bootstrap.min.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/angular_components/restorativeApp.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/angular_components/controllers/examinationController.js"></script>
