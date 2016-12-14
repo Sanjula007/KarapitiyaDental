@@ -156,3 +156,11 @@
 		</div>
 	</div>
 </div>
+
+<script src="<?php echo base_url('assest/'); ?>js/angular.min.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/angular-sanitize.min.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/angular-animate.min.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/angular-messages.min.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/ui-bootstrap.min.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/angular_components/restorativeApp.js"></script>
+<script src="<?php echo base_url('assest/'); ?>js/angular_components/controllers/restorativeController.js"></script>
